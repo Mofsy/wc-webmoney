@@ -129,6 +129,30 @@ class WC_Webmoney extends WC_Payment_Gateway
         $this->language = $this->get_option('language');
 
         /**
+         * Automatic language
+         */
+        if($this->get_option('language_auto') === 'yes')
+        {
+            $lang = get_locale();
+            switch($lang)
+            {
+                case 'en_EN':
+                    $this->language = 'en';
+                    break;
+                case 'ru_RU':
+                    $this->language = 'ru';
+                    break;
+                default:
+                    $this->language = 'ru';
+                    break;
+            }
+        }
+        if($this->language !== 'ru')
+        {
+            $this->form_url = 'https://merchant.wmtransfer.com/lmi/payment.asp';
+        }
+
+        /**
          * Set description
          */
         $this->description = $this->get_option('description');
@@ -281,6 +305,18 @@ class WC_Webmoney extends WC_Payment_Gateway
                     'en' => 'English'
                 ),
                 'description' => __( 'What language interface displayed for the customer on Webmoney Transfer?', 'wc-webmoney' ),
+                'default' => 'ru'
+            ),
+            'language_auto' => array
+            (
+                'title' => __( 'Language based on the locale?', 'wc-webmoney' ),
+                'type' => 'select',
+                'options' => array
+                (
+                    'yes' => 'Yes',
+                    'no' => 'No'
+                ),
+                'description' => __( 'Trying to get the language based on the locale?', 'wc-webmoney' ),
                 'default' => 'ru'
             ),
             'title' => array
