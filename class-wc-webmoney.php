@@ -22,6 +22,13 @@ class WC_Webmoney extends WC_Payment_Gateway
     public $currency;
 
     /**
+     * Current purse
+     *
+     * @var string (12)
+     */
+    public $wallet;
+
+    /**
      * Secret key for Merchant
      *
      * @var string
@@ -183,6 +190,12 @@ class WC_Webmoney extends WC_Payment_Gateway
         $this->secret_key = $this->get_option('secret_key');
 
         /**
+         * Select purse
+         */
+        $data_wallet = $this->get_wallet_data_from_currency($this->currency);
+        $this->wallet = $data_wallet['wallet'];
+
+        /**
          * Set icon
          */
         if($this->get_option('enable_icon') === 'yes')
@@ -219,6 +232,32 @@ class WC_Webmoney extends WC_Payment_Gateway
         }
     }
 
+    /**
+     * @param $currency
+     * @return array
+     */
+    public function get_wallet_data_from_currency($currency)
+    {
+        $data = array();
+
+        switch($currency)
+        {
+            case 'USD':
+                $data['wallet'] = $this->wallet_wmz;
+                break;
+            case 'EUR':
+                $data['wallet'] = $this->wallet_wme;
+                break;
+            case 'UAH':
+                $data['wallet'] = $this->wallet_wmu;
+                break;
+
+            default:
+                $data['wallet'] = $this->wallet_wmr;
+        }
+
+        return $data;
+    }
     /**
      * Check if this gateway is enabled and available in the user's country
      */
@@ -491,10 +530,20 @@ class WC_Webmoney extends WC_Payment_Gateway
         $args['LMI_PAYMENT_NO'] = $order_id;
 
         /**
-         * Purse merchant
+         * Rewrite currency from order
          */
         $this->currency = $order->order_currency;
-        $args['LMI_PAYEE_PURSE'] = $this->wallet_wmr;
+
+        /**
+         * Select purse
+         */
+        $data_wallet = $this->get_wallet_data_from_currency($this->currency);
+        $this->wallet = $data_wallet['wallet'];
+
+        /**
+         * Purse merchant
+         */
+        $args['LMI_PAYEE_PURSE'] = $this->wallet;
 
         /**
          * Test mode
