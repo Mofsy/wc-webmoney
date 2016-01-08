@@ -450,9 +450,9 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Test mode
          */
-        if ($this->test === 'yes')
+        if ($this->test !== '')
         {
-            $args['LMI_SIM_MODE'] = 1;
+            $args['LMI_SIM_MODE'] = $this->test;
         }
 
         /**
