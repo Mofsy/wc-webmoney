@@ -812,15 +812,15 @@ class WC_Webmoney extends WC_Payment_Gateway
             $local_hash = strtoupper(hash('sha256', $LMI_PAYEE_PURSE.$LMI_PAYMENT_AMOUNT.$LMI_PAYMENT_NO.$LMI_MODE.$LMI_SYS_INVS_NO.$LMI_SYS_TRANS_NO.$LMI_SYS_TRANS_DATE.$this->secret_key.$LMI_PAYER_PURSE.$LMI_PAYER_WM));
 
             /**
+             * Get order object
+             */
+            $order = wc_get_order($LMI_PAYMENT_NO);
+
+            /**
              * Result
              */
             if ($_GET['action'] === 'result')
             {
-                /**
-                 * Get order object
-                 */
-                $order = wc_get_order($LMI_PAYMENT_NO);
-
                 /**
                  * Check pre request
                  */
@@ -938,8 +938,9 @@ class WC_Webmoney extends WC_Payment_Gateway
              */
             else if ($_GET['action'] === 'success')
             {
-                $order = wc_get_order($LMI_PAYMENT_NO);
-
+                /**
+                 * Empty cart
+                 */
                 WC()->cart->empty_cart();
 
                 /**
@@ -952,8 +953,6 @@ class WC_Webmoney extends WC_Payment_Gateway
              */
             else if ($_GET['action'] === 'fail')
             {
-                $order = wc_get_order($LMI_PAYMENT_NO);
-
                 /**
                  * Add order note
                  */
