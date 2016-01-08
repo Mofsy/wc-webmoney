@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
-"POT-Creation-Date: 2016-01-08 12:28+0300\n"
+"POT-Creation-Date: 2016-01-08 12:36+0300\n"
 "PO-Revision-Date: 2016-01-05 19:06+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
@@ -60,6 +60,14 @@ msgstr ""
 msgid "Language interface"
 msgstr ""
 
+#: class-wc-webmoney.php:304
+msgid "Russian"
+msgstr ""
+
+#: class-wc-webmoney.php:305
+msgid "English"
+msgstr ""
+
 #: class-wc-webmoney.php:307
 msgid ""
 "What language interface displayed for the customer on Webmoney Transfer?"
@@ -67,6 +75,14 @@ msgstr ""
 
 #: class-wc-webmoney.php:312
 msgid "Language based on the locale?"
+msgstr ""
+
+#: class-wc-webmoney.php:316
+msgid "Yes"
+msgstr ""
+
+#: class-wc-webmoney.php:317
+msgid "No"
 msgstr ""
 
 #: class-wc-webmoney.php:319

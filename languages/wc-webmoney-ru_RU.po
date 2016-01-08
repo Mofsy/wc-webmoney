@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
-"POT-Creation-Date: 2016-01-08 12:28+0300\n"
-"PO-Revision-Date: 2016-01-08 12:29+0300\n"
+"POT-Creation-Date: 2016-01-08 12:36+0300\n"
+"PO-Revision-Date: 2016-01-08 12:36+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language: ru_RU\n"
@@ -61,6 +61,14 @@ msgstr "Показать"
 msgid "Language interface"
 msgstr "Язык интерфейса"
 
+#: class-wc-webmoney.php:304
+msgid "Russian"
+msgstr "Русский"
+
+#: class-wc-webmoney.php:305
+msgid "English"
+msgstr "Английский"
+
 #: class-wc-webmoney.php:307
 msgid ""
 "What language interface displayed for the customer on Webmoney Transfer?"
@@ -69,6 +77,14 @@ msgstr "Какой язык интерфейса отображается для
 #: class-wc-webmoney.php:312
 msgid "Language based on the locale?"
 msgstr "Язык интерфейса на основе локали?"
+
+#: class-wc-webmoney.php:316
+msgid "Yes"
+msgstr "Да"
+
+#: class-wc-webmoney.php:317
+msgid "No"
+msgstr "Нет"
 
 #: class-wc-webmoney.php:319
 msgid "Trying to get the language based on the locale?"
