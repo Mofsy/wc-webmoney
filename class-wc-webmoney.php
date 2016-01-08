@@ -22,18 +22,32 @@ class WC_Webmoney extends WC_Payment_Gateway
     public $currency;
 
     /**
+     * All support currency
+     *
+     * @var array
+     */
+    public $currency_all = array('RUB', 'EUR', 'USD', 'UAH');
+
+    /**
      * Current purse
      *
      * @var string (12)
      */
-    public $wallet;
+    public $purse;
 
     /**
-     * Secret key for Merchant
+     * Secret key for current purse
      *
      * @var string
      */
     public $secret_key;
+
+    /**
+     * Allow wallets
+     *
+     * @var array
+     */
+    public $purse_all = array();
 
     /**
      * Unique gateway id
@@ -54,35 +68,7 @@ class WC_Webmoney extends WC_Payment_Gateway
      *
      * @var string
      */
-    public $language;
-
-    /**
-     * Dollar
-     *
-     * @var string
-     */
-    public $wallet_wmz;
-
-    /**
-     * Ruble
-     *
-     * @var string
-     */
-    public $wallet_wmr;
-
-    /**
-     * Euro
-     *
-     * @var string
-     */
-    public $wallet_wme;
-
-    /**
-     * Uah
-     *
-     * @var string
-     */
-    public $wallet_wmu;
+    public $language = 'ru';
 
     /**
      * @var mixed
@@ -167,33 +153,40 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Set WMR
          */
-        $this->wallet_wmr = $this->get_option('wallet_wmr');
+        if($this->get_option('purse_wmr_secret') !== '')
+        {
+            $this->add_purse('RUB', $this->get_option('purse_wmr'), $this->get_option('purse_wmr_secret'));
+        }
 
         /**
          * Set WME
          */
-        $this->wallet_wme = $this->get_option('wallet_wme');
+        if($this->get_option('purse_wme_secret') !== '')
+        {
+            $this->add_purse('EUR', $this->get_option('purse_wme'), $this->get_option('purse_wme_secret'));
+        }
 
         /**
          * Set WMZ
          */
-        $this->wallet_wmz = $this->get_option('wallet_wmz');
+        if($this->get_option('purse_wmz_secret') !== '')
+        {
+            $this->add_purse('USD', $this->get_option('purse_wmz'), $this->get_option('purse_wmz_secret'));
+        }
 
         /**
          * Set WMU
          */
-        $this->wallet_wmu = $this->get_option('wallet_wmu');
-
-        /**
-         * Set secret key
-         */
-        $this->secret_key = $this->get_option('secret_key');
+        if($this->get_option('purse_wmu_secret') !== '')
+        {
+            $this->add_purse('UAH', $this->get_option('purse_wmu'), $this->get_option('purse_wmu_secret'));
+        }
 
         /**
          * Select purse
          */
-        $data_wallet = $this->get_wallet_data_from_currency($this->currency);
-        $this->wallet = $data_wallet['wallet'];
+        $data_wallet = $this->get_purse_from_currency($this->currency);
+        $this->purse = $data_wallet['purse'];
 
         /**
          * Set icon
@@ -234,30 +227,35 @@ class WC_Webmoney extends WC_Payment_Gateway
 
     /**
      * @param $currency
-     * @return array
+     * @return mixed
      */
-    public function get_wallet_data_from_currency($currency)
+    public function get_purse_from_currency($currency)
     {
-        $data = array();
-
-        switch($currency)
+        if(array_key_exists($currency, $this->purse_all))
         {
-            case 'USD':
-                $data['wallet'] = $this->wallet_wmz;
-                break;
-            case 'EUR':
-                $data['wallet'] = $this->wallet_wme;
-                break;
-            case 'UAH':
-                $data['wallet'] = $this->wallet_wmu;
-                break;
-
-            default:
-                $data['wallet'] = $this->wallet_wmr;
+            return $this->purse_all[$currency];
         }
 
-        return $data;
+        return false;
     }
+
+    /**
+     * Add purse to allow wallets
+     *
+     * @param $currency
+     * @param $purse
+     * @param $secret_key
+     */
+    public function add_purse($currency, $purse, $secret_key)
+    {
+        $this->purse_all[$currency] = array
+        (
+            'purse' => $purse,
+
+            'secret_key' => $secret_key
+        );
+    }
+
     /**
      * Check if this gateway is enabled and available in the user's country
      */
@@ -268,7 +266,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Check allow currency
          */
-        if (!in_array($this->currency, array('RUB', 'EUR', 'USD', 'UAH'), false ))
+        if (!in_array($this->currency, $this->currency_all, false))
         {
             $return = false;
         }
@@ -372,44 +370,65 @@ class WC_Webmoney extends WC_Payment_Gateway
                 'description' => __( 'Description of the method of payment that the customer will see on our website.', 'wc-webmoney' ),
                 'default' => __( 'Payment by Webmoney.', 'wc-webmoney' )
             ),
-            'wallets' => array(
-                'title'       => __( 'Wallets', 'wc-webmoney' ),
+            'purses' => array(
+                'title'       => __( 'Purses', 'wc-webmoney' ),
                 'type'        => 'title',
                 'description' => '',
             ),
-            'wallet_wmz' => array
+            'purse_wmz' => array
             (
-                'title' => __('Wallet WMZ', 'wc-webmoney'),
+                'title' => __('Purse WMZ', 'wc-webmoney'),
                 'type' => 'text',
                 'description' => __( 'Dollars webmoney purse to which the buyer has to make a payment for billing in dollars.', 'wc-webmoney' ),
                 'default' => __('Z', 'wc-webmoney')
             ),
-            'wallet_wme' => array
+            'purse_wmz_secret' => array
             (
-                'title' => __('Wallet WME', 'wc-webmoney'),
+                'title' => __('Secret key for WMZ', 'wc-webmoney'),
+                'type' => 'text',
+                'description' => __('Please write Secret key for WMZ purse.', 'wc-webmoney'),
+                'default' => ''
+            ),
+            'purse_wme' => array
+            (
+                'title' => __('Purse WME', 'wc-webmoney'),
                 'type' => 'text',
                 'description' => __( 'Euros webmoney purse to which the buyer has to make a payment for billing in euros.', 'wc-webmoney' ),
                 'default' => __('E', 'wc-webmoney')
             ),
-            'wallet_wmr' => array
+            'purse_wme_secret' => array
             (
-                'title' => __('Wallet WMR', 'wc-webmoney'),
+                'title' => __('Secret key for WME', 'wc-webmoney'),
+                'type' => 'text',
+                'description' => __('Please write Secret key for WME purse.', 'wc-webmoney'),
+                'default' => ''
+            ),
+            'purse_wmr' => array
+            (
+                'title' => __('Purse WMR', 'wc-webmoney'),
                 'type' => 'text',
                 'description' => __( 'Russian rubles webmoney purse to which the buyer has to make a payment for billing in rubles.', 'wc-webmoney' ),
                 'default' => __('R', 'wc-webmoney')
             ),
-            'wallet_wmu' => array
+            'purse_wmr_secret' => array
             (
-                'title' => __('Wallet WMU', 'wc-webmoney'),
+                'title' => __('Secret key for WMR', 'wc-webmoney'),
+                'type' => 'text',
+                'description' => __('Please write Secret key for WMR purse.', 'wc-webmoney'),
+                'default' => ''
+            ),
+            'purse_wmu' => array
+            (
+                'title' => __('Purse WMU', 'wc-webmoney'),
                 'type' => 'text',
                 'description' => __( 'UAH webmoney purse to which the buyer has to make a payment for billing in UAH.', 'wc-webmoney' ),
                 'default' => __('U', 'wc-webmoney')
             ),
-            'secret_key' => array
+            'purse_wmu_secret' => array
             (
-                'title' => __('Secret key', 'wc-webmoney'),
+                'title' => __('Secret key for WMU', 'wc-webmoney'),
                 'type' => 'text',
-                'description' => __('Please write Secret key', 'wc-webmoney'),
+                'description' => __('Please write Secret key for WMU purse.', 'wc-webmoney'),
                 'default' => ''
             ),
             'technical' => array(
@@ -484,11 +503,11 @@ class WC_Webmoney extends WC_Payment_Gateway
     }
 
     /**
-     * Generate the dibs button link
+     * Generate payments form
      *
      * @param $order_id
      *
-     * @return string
+     * @return string Payment form
      **/
     public function generate_form($order_id)
     {
@@ -537,13 +556,13 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Select purse
          */
-        $data_wallet = $this->get_wallet_data_from_currency($this->currency);
-        $this->wallet = $data_wallet['wallet'];
+        $data_wallet = $this->get_purse_from_currency($this->currency);
+        $this->purse = $data_wallet['purse'];
 
         /**
          * Purse merchant
          */
-        $args['LMI_PAYEE_PURSE'] = $this->wallet;
+        $args['LMI_PAYEE_PURSE'] = $this->purse;
 
         /**
          * Test mode
@@ -851,7 +870,7 @@ class WC_Webmoney extends WC_Payment_Gateway
                             /**
                              * Set status is payment
                              */
-                            $order->update_status('processing');
+                            $order->payment_complete($LMI_SYS_TRANS_NO);
                         }
                         /**
                          * Real payment
@@ -866,7 +885,7 @@ class WC_Webmoney extends WC_Payment_Gateway
                             /**
                              * Set status is payment
                              */
-                            $order->update_status('processing');
+                            $order->payment_complete($LMI_SYS_TRANS_NO);
                         }
                     }
 
