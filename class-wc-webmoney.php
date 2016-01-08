@@ -301,8 +301,8 @@ class WC_Webmoney extends WC_Payment_Gateway
                 'type' => 'select',
                 'options' => array
                 (
-                    'ru' => 'Russian',
-                    'en' => 'English'
+                    'ru' => __('Russian', 'wc-webmoney'),
+                    'en' => __('English', 'wc-webmoney')
                 ),
                 'description' => __( 'What language interface displayed for the customer on Webmoney Transfer?', 'wc-webmoney' ),
                 'default' => 'ru'
@@ -313,8 +313,8 @@ class WC_Webmoney extends WC_Payment_Gateway
                 'type' => 'select',
                 'options' => array
                 (
-                    'yes' => 'Yes',
-                    'no' => 'No'
+                    'yes' => __('Yes', 'wc-webmoney'),
+                    'no' => __('No', 'wc-webmoney')
                 ),
                 'description' => __( 'Trying to get the language based on the locale?', 'wc-webmoney' ),
                 'default' => 'ru'
