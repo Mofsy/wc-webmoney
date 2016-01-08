@@ -5,7 +5,7 @@ Requires at least: 3.0
 Tested up to: 4.4.1
 Stable tag: trunk
 WC requires at least: 2.2
-WC tested up to: 2.4
+WC tested up to: 2.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://mofsy.ru/about/help

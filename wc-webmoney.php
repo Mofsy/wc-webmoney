@@ -1,9 +1,9 @@
 <?php
 /*
     Plugin Name: Woocommerce - Webmoney Payment Gateway
-    Plugin URI: https://mofsy.ru
+    Plugin URI: https://wordpress.org/plugins/woocommerce-webmoney
     Description: Allows you to use Webmoney payment gateway with the WooCommerce plugin.
-    Version: 0.1.0.1
+    Version: 0.1.0.2
     Author: Mofsy
     Author URI: https://mofsy.ru
     Text Domain: woocommerce-webmoney
