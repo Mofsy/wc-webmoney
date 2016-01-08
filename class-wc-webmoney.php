@@ -520,22 +520,17 @@ class WC_Webmoney extends WC_Payment_Gateway
     {
         $order = wc_get_order($order_id);
 
-        /**
-         * Payment completed
-         */
-        $order->add_order_note(__('Payment completed.', 'wc-webmoney'));
-
-        $order->payment_complete();
-
         if ( !version_compare( $this->wc_version, '2.1.0', '<' ) )
         {
-            return array(
+            return array
+            (
                 'result' => 'success',
                 'redirect' => $order->get_checkout_payment_url( true )
             );
         }
 
-        return array(
+        return array
+        (
             'result' => 'success',
             'redirect'	=> add_query_arg('order-pay', $order->id, add_query_arg('key', $order->order_key, get_permalink(woocommerce_get_page_id('pay'))))
         );
