@@ -817,44 +817,72 @@ class WC_Webmoney extends WC_Payment_Gateway
             if ($_GET['action'] === 'result')
             {
                 /**
+                 * Get order object
+                 */
+                $order = wc_get_order($LMI_PAYMENT_NO);
+
+                /**
                  * Check pre request
                  */
                 if($LMI_PREREQUEST === 1)
                 {
                     /**
-                     * Get order object
-                     */
-                    $order = wc_get_order($LMI_PAYMENT_NO);
-
-                    /**
                      * Add order note
                      */
-                    $order->add_order_note(__('Webmoney PRE request success.', 'wc-webmoney'));
+                    $order->add_order_note(sprintf(__('Webmoney PRE request success. WMID: %1$s and purse: %2$s and IP: %3$s', 'wc-webmoney'), $LMI_PAYER_WM, $LMI_PAYER_PURSE, $LMI_PAYER_IP));
 
                     die('YES');
                 }
                 else
                 {
                     /**
-                     * Check hash or secret key
+                     * Validated flag
                      */
-                    if((count($LMI_HASH) > 0 && $local_hash === $LMI_HASH) || ($this->secret_key === $LMI_SECRET_KEY))
+                    $validate = true;
+
+                    /**
+                     * Check hash
+                     */
+                    if(count($LMI_HASH) > 0 && $local_hash !== $LMI_HASH)
                     {
-                        /**
-                         * Get order object
-                         */
-                        $order = wc_get_order($LMI_PAYMENT_NO);
+                        $validate = false;
 
                         /**
-                         * Check purse
+                         * Add order note
                          */
-                        //todo: implements
+                        $order->add_order_note(sprintf(__('Validate hash error. Local: %1$s Remote: %2$s', 'wc-webmoney'), $local_hash, $LMI_HASH));
+                    }
 
-                        /*
-                         * Check sum
+                    /**
+                     * Check secret key
+                     */
+                    if($LMI_SECRET_KEY !== '' && $this->secret_key !== $LMI_SECRET_KEY)
+                    {
+                        $validate = false;
+
+                        /**
+                         * Add order note
                          */
-                        //todo: implements
+                        $order->add_order_note(sprintf(__('Validate secret key error. Local: %1$s Remote: %2$s', 'wc-webmoney'), $this->secret_key, $LMI_SECRET_KEY));
+                    }
 
+                    /**
+                     * Check sum
+                     */
+                    //todo: implements
+
+
+                    /**
+                     * Check purse
+                     */
+                    //todo:implements
+
+
+                    /**
+                     * Validated
+                     */
+                    if($validate === true)
+                    {
                         /**
                          * Check mode
                          */
@@ -872,12 +900,7 @@ class WC_Webmoney extends WC_Payment_Gateway
                             /**
                              * Add order note
                              */
-                            $order->add_order_note(__('Order successfully paid (TEST MODE).', 'wc-webmoney'));
-
-                            /**
-                             * Set status is payment
-                             */
-                            $order->payment_complete($LMI_SYS_TRANS_NO);
+                            $order->add_order_note(sprintf(__('Order successfully paid (TEST MODE). WMID: %1$s and purse: %2$s and IP: %3$s', 'wc-webmoney'), $LMI_PAYER_WM, $LMI_PAYER_PURSE, $LMI_PAYER_IP));
                         }
                         /**
                          * Real payment
@@ -887,17 +910,28 @@ class WC_Webmoney extends WC_Payment_Gateway
                             /**
                              * Add order note
                              */
-                            $order->add_order_note(__('Order successfully paid.', 'wc-webmoney'));
-
-                            /**
-                             * Set status is payment
-                             */
-                            $order->payment_complete($LMI_SYS_TRANS_NO);
+                            $order->add_order_note(sprintf(__('Order successfully paid. WMID: %1$s and purse: %2$s and IP: %3$s', 'wc-webmoney'), $LMI_PAYER_WM, $LMI_PAYER_PURSE, $LMI_PAYER_IP));
                         }
-                    }
 
-                    wp_die(__('Payment error, please pay other time.', 'wc-webmoney'));
+                        /**
+                         * Set status is payment
+                         */
+                        $order->payment_complete($LMI_SYS_TRANS_NO);
+                        die();
+                    }
+                    else
+                    {
+                        /**
+                         * Send Service unavailable
+                         */
+                        wp_die(__('Payment error, please pay other time.', 'wc-webmoney'), 'Payment error', array('response' => '503'));
+                    }
                 }
+
+                /**
+                 * Send Service unavailable
+                 */
+                wp_die(__('Payment error, please pay other time.', 'wc-webmoney'), 'Payment error', array('response' => '503'));
             }
             /**
              * Success
@@ -923,7 +957,7 @@ class WC_Webmoney extends WC_Payment_Gateway
                 /**
                  * Add order note
                  */
-                $order->add_order_note(__('The order has not been paid.', 'wc-webmoney'));
+                $order->add_order_note(sprintf(__('The order has not been paid. WMID: %1$s and purse: %2$s and IP: %3$s', 'wc-webmoney'), $LMI_PAYER_WM, $LMI_PAYER_PURSE, $LMI_PAYER_IP));
 
                 /**
                  * Sen status is failed
@@ -940,8 +974,6 @@ class WC_Webmoney extends WC_Payment_Gateway
         {
             die('IPN Request Failure');
         }
-
-        die();
     }
 
     /**
@@ -973,7 +1005,7 @@ class WC_Webmoney extends WC_Payment_Gateway
             return false;
         }
 
-        //todo: implements
+        //todo: implements x14
 
         //$order->add_order_note( sprintf( __( 'Refunded %s - Refund ID: %s', 'woocommerce' ), $result['GROSSREFUNDAMT'], $result['REFUNDTRANSACTIONID'] ) );
 
