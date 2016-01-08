@@ -556,6 +556,11 @@ class WC_Webmoney extends WC_Payment_Gateway
     {
         $order = wc_get_order($order_id);
 
+        /**
+         * Add order note
+         */
+        $order->add_order_note(__('The client started to pay.', 'wc-webmoney'));
+
         if ( !version_compare( $this->wc_version, '2.1.0', '<' ) )
         {
             return array
@@ -741,6 +746,16 @@ class WC_Webmoney extends WC_Payment_Gateway
                  */
                 if($LMI_PREREQUEST === 1)
                 {
+                    /**
+                     * Get order object
+                     */
+                    $order = wc_get_order($LMI_PAYMENT_NO);
+
+                    /**
+                     * Add order note
+                     */
+                    $order->add_order_note(__('Webmoney PRE request success.', 'wc-webmoney'));
+
                     die('YES');
                 }
                 else
