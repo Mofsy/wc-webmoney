@@ -6,7 +6,7 @@
     Version: 0.1.2.1
     Author: Mofsy
     Author URI: https://mofsy.ru
-    Text Domain: woocommerce-webmoney
+    Text Domain: wc-webmoney
     Domain Path: /languages
 
     Copyright: © 2015-2016 Mofsy.
