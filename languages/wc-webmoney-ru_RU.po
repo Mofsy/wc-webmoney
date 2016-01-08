@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
-"POT-Creation-Date: 2016-01-08 12:36+0300\n"
-"PO-Revision-Date: 2016-01-08 12:36+0300\n"
+"POT-Creation-Date: 2016-01-08 12:52+0300\n"
+"PO-Revision-Date: 2016-01-08 12:53+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language: ru_RU\n"
@@ -237,24 +237,32 @@ msgstr "Оплатить"
 msgid "Cancel & return to cart"
 msgstr "Отменить и вернутся в корзину"
 
-#: class-wc-webmoney.php:580
+#: class-wc-webmoney.php:562
+msgid "The client started to pay."
+msgstr "Клиент начал оплату."
+
+#: class-wc-webmoney.php:585
 msgid "Thank you for your order, please press the button below to pay."
 msgstr ""
 "Спасибо за ваш заказ, пожалуйста, нажмите ниже на кнопку, чтобы заплатить."
 
-#: class-wc-webmoney.php:785
+#: class-wc-webmoney.php:757
+msgid "Webmoney PRE request success."
+msgstr "Пред запрос Webmoney успешен."
+
+#: class-wc-webmoney.php:800
 msgid "Order successfully paid (TEST MODE)."
 msgstr "Счет успешно оплачен (ТЕСТОВЫЙ ПЛАТЕЖ)"
 
-#: class-wc-webmoney.php:800
+#: class-wc-webmoney.php:815
 msgid "Order successfully paid."
 msgstr "Счет успешно оплачен."
 
-#: class-wc-webmoney.php:809
+#: class-wc-webmoney.php:824
 msgid "Payment error, please pay other time."
 msgstr "Ошибка платежа, пожалуйста повторите попытку позже."
 
-#: class-wc-webmoney.php:836
+#: class-wc-webmoney.php:851
 msgid "The order has not been paid."
 msgstr "Счет не был оплачен."
 
