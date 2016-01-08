@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
-"POT-Creation-Date: 2016-01-08 17:36+0300\n"
+"POT-Creation-Date: 2016-01-08 19:33+0300\n"
 "PO-Revision-Date: 2016-01-05 19:06+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
@@ -257,24 +257,39 @@ msgstr ""
 msgid "Thank you for your order, please press the button below to pay."
 msgstr ""
 
-#: class-wc-webmoney.php:825
-msgid "Webmoney PRE request success."
+#: class-wc-webmoney.php:832
+#, php-format
+msgid "Webmoney PRE request success. WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr ""
 
-#: class-wc-webmoney.php:868
-msgid "Order successfully paid (TEST MODE)."
+#: class-wc-webmoney.php:853
+#, php-format
+msgid "Validate hash error. Local: %1$s Remote: %2$s"
 msgstr ""
 
-#: class-wc-webmoney.php:883
-msgid "Order successfully paid."
+#: class-wc-webmoney.php:866
+#, php-format
+msgid "Validate secret key error. Local: %1$s Remote: %2$s"
 msgstr ""
 
-#: class-wc-webmoney.php:892
+#: class-wc-webmoney.php:903
+#, php-format
+msgid ""
+"Order successfully paid (TEST MODE). WMID: %1$s and purse: %2$s and IP: %3$s"
+msgstr ""
+
+#: class-wc-webmoney.php:913
+#, php-format
+msgid "Order successfully paid. WMID: %1$s and purse: %2$s and IP: %3$s"
+msgstr ""
+
+#: class-wc-webmoney.php:927 class-wc-webmoney.php:934
 msgid "Payment error, please pay other time."
 msgstr ""
 
-#: class-wc-webmoney.php:919
-msgid "The order has not been paid."
+#: class-wc-webmoney.php:960
+#, php-format
+msgid "The order has not been paid. WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
