@@ -407,7 +407,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Create order object
          */
-        $order = new WC_Order($order_id);
+        $order = wc_get_order($order_id);
 
         /**
          * Form parameters
@@ -505,7 +505,7 @@ class WC_Webmoney extends WC_Payment_Gateway
      **/
     public function process_payment($order_id)
     {
-        $order = new WC_Order($order_id);
+        $order = wc_get_order($order_id);
 
         /**
          * Payment completed
@@ -709,16 +709,17 @@ class WC_Webmoney extends WC_Payment_Gateway
                         /**
                          * Get order object
                          */
-                        $order = new WC_Order($LMI_PAYMENT_NO);
+                        $order = wc_get_order($LMI_PAYMENT_NO);
 
                         /**
                          * Check purse
                          */
+                        //todo: implements
 
                         /*
                          * Check sum
                          */
-
+                        //todo: implements
 
                         /**
                          * Check mode
@@ -769,7 +770,7 @@ class WC_Webmoney extends WC_Payment_Gateway
              */
             else if ($_GET['action'] === 'success')
             {
-                $order = new WC_Order($LMI_PAYMENT_NO);
+                $order = wc_get_order($LMI_PAYMENT_NO);
 
                 WC()->cart->empty_cart();
 
@@ -783,7 +784,7 @@ class WC_Webmoney extends WC_Payment_Gateway
              */
             else if ($_GET['action'] === 'fail')
             {
-                $order = new WC_Order($LMI_PAYMENT_NO);
+                $order = wc_get_order($LMI_PAYMENT_NO);
 
                 /**
                  * Add order note
