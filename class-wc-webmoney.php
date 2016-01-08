@@ -800,6 +800,13 @@ class WC_Webmoney extends WC_Payment_Gateway
             }
 
             /**
+             * Check purse allow
+             */
+            $local_purse = $this->get_purse_from_currency($this->currency);
+            $this->purse = $local_purse['purse'];
+            $this->secret_key = $local_purse['secret_key'];
+
+            /**
              * Local hash
              */
             $local_hash = strtoupper(hash('sha256', $LMI_PAYEE_PURSE.$LMI_PAYMENT_AMOUNT.$LMI_PAYMENT_NO.$LMI_MODE.$LMI_SYS_INVS_NO.$LMI_SYS_TRANS_NO.$LMI_SYS_TRANS_DATE.$this->secret_key.$LMI_PAYER_PURSE.$LMI_PAYER_WM));
