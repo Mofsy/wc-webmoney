@@ -1,0 +1,169 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
+"POT-Creation-Date: 2016-01-05 19:27+0300\n"
+"PO-Revision-Date: 2016-01-05 19:06+0300\n"
+"Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
+"Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wc-webmoney.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: classes/WC_Webmoney.php:162 classes/WC_Webmoney.php:238
+msgid "Webmoney"
+msgstr ""
+
+#: classes/WC_Webmoney.php:163
+msgid "Setting receiving payments through Webmoney Merchant."
+msgstr ""
+
+#: classes/WC_Webmoney.php:177
+msgid "Gateway offline"
+msgstr ""
+
+#: classes/WC_Webmoney.php:177
+msgid "Webmoney does not support the currency your store."
+msgstr ""
+
+#: classes/WC_Webmoney.php:191
+msgid "Включить логирование (<code>woocommerce/logs/"
+msgstr ""
+
+#: classes/WC_Webmoney.php:209
+msgid "Online/Offline gateway"
+msgstr ""
+
+#: classes/WC_Webmoney.php:211
+msgid "Online"
+msgstr ""
+
+#: classes/WC_Webmoney.php:216
+msgid "Show gateway icon?"
+msgstr ""
+
+#: classes/WC_Webmoney.php:218
+msgid "Show"
+msgstr ""
+
+#: classes/WC_Webmoney.php:223
+msgid "Language interface"
+msgstr ""
+
+#: classes/WC_Webmoney.php:230
+msgid ""
+"Вы определяете изначально сами, на каком языке интерфейс Webmoney должен "
+"отображаться для клиента"
+msgstr ""
+
+#: classes/WC_Webmoney.php:235
+msgid "Title"
+msgstr ""
+
+#: classes/WC_Webmoney.php:237 classes/WC_Webmoney.php:244
+#: classes/WC_Webmoney.php:251 classes/WC_Webmoney.php:258
+msgid "Это название, которое пользователь видит во время оплаты."
+msgstr ""
+
+#: classes/WC_Webmoney.php:242
+msgid "Wallet WMZ"
+msgstr ""
+
+#: classes/WC_Webmoney.php:245
+msgid "Z"
+msgstr ""
+
+#: classes/WC_Webmoney.php:249
+msgid "Wallet WME"
+msgstr ""
+
+#: classes/WC_Webmoney.php:252
+msgid "E"
+msgstr ""
+
+#: classes/WC_Webmoney.php:256
+msgid "Wallet WMR"
+msgstr ""
+
+#: classes/WC_Webmoney.php:259
+msgid "R"
+msgstr ""
+
+#: classes/WC_Webmoney.php:263
+msgid "Secret key"
+msgstr ""
+
+#: classes/WC_Webmoney.php:265
+msgid "Пожалуйста введите Secret key"
+msgstr ""
+
+#: classes/WC_Webmoney.php:270
+msgid "Test mode"
+msgstr ""
+
+#: classes/WC_Webmoney.php:272
+msgid "Включен"
+msgstr ""
+
+#: classes/WC_Webmoney.php:273
+msgid "В этом режиме плата за товар не снимается."
+msgstr ""
+
+#: classes/WC_Webmoney.php:278
+msgid "Logging"
+msgstr ""
+
+#: classes/WC_Webmoney.php:285
+msgid "Description"
+msgstr ""
+
+#: classes/WC_Webmoney.php:287
+msgid "Описанием метода оплаты которое клиент будет видеть на вашем сайте."
+msgstr ""
+
+#: classes/WC_Webmoney.php:376
+msgid "Оплатить"
+msgstr ""
+
+#: classes/WC_Webmoney.php:376
+msgid "Отказаться от оплаты & вернуться в корзину"
+msgstr ""
+
+#: classes/WC_Webmoney.php:406
+msgid "Спасибо за Ваш заказ, пожалуйста, нажмите кнопку ниже, чтобы заплатить."
+msgstr ""
+
+#: classes/WC_Webmoney.php:467
+msgid "Платеж не оплачен"
+msgstr ""
+
+#: classes/WC_Webmoney.php:491
+msgid "Платеж успешно завершен."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Woocommerce - Webmoney Payment Gateway"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://mofsy.ru"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Allows you to use Webmoney payment gateway with the WooCommerce plugin."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Mofsy"
+msgstr ""
