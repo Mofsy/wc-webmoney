@@ -297,7 +297,7 @@ msgid "Woocommerce - Webmoney Payment Gateway"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://wordpress.org/plugins/woocommerce-webmoney"
+msgid "https://wordpress.org/plugins/wc-webmoney"
 msgstr ""
 
 #. Description of the plugin/theme

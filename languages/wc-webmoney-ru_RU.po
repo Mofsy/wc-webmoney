@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
 "POT-Creation-Date: 2016-01-08 19:33+0300\n"
-"PO-Revision-Date: 2016-01-08 19:36+0300\n"
+"PO-Revision-Date: 2016-01-09 01:33+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language: ru_RU\n"
@@ -311,8 +311,8 @@ msgid "Woocommerce - Webmoney Payment Gateway"
 msgstr "Woocommerce - платежный шлюз для  Webmoney"
 
 #. Plugin URI of the plugin/theme
-msgid "https://wordpress.org/plugins/woocommerce-webmoney"
-msgstr "https://wordpress.org/plugins/woocommerce-webmoney"
+msgid "https://wordpress.org/plugins/wc-webmoney"
+msgstr "https://wordpress.org/plugins/wc-webmoney"
 
 #. Description of the plugin/theme
 msgid "Allows you to use Webmoney payment gateway with the WooCommerce plugin."
