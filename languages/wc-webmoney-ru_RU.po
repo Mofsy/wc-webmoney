@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
 "POT-Creation-Date: 2016-01-08 04:03+0300\n"
-"PO-Revision-Date: 2016-01-08 04:04+0300\n"
+"PO-Revision-Date: 2016-01-08 04:15+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language: ru_RU\n"
@@ -47,7 +47,7 @@ msgstr "Включить"
 
 #: class-wc-webmoney.php:250
 msgid "Interface"
-msgstr ""
+msgstr "Интерфейс"
 
 #: class-wc-webmoney.php:256
 msgid "Show gateway icon?"
@@ -112,9 +112,8 @@ msgid ""
 msgstr ""
 
 #: class-wc-webmoney.php:304
-#, fuzzy
 msgid "E"
-msgstr "Введите имя пользователя или email."
+msgstr "E"
 
 #: class-wc-webmoney.php:308
 msgid "Wallet WMR"
@@ -149,13 +148,12 @@ msgid "Secret key"
 msgstr "Секретный ключ"
 
 #: class-wc-webmoney.php:324
-#, fuzzy
 msgid "Please write Secret key"
-msgstr "Секретный ключ"
+msgstr "Пожалуйста, введите Секретный ключ"
 
 #: class-wc-webmoney.php:328
 msgid "Technical details"
-msgstr ""
+msgstr "Технические детали"
 
 #: class-wc-webmoney.php:334
 msgid "Signature method"
@@ -171,7 +169,7 @@ msgstr ""
 
 #: class-wc-webmoney.php:349
 msgid "Off"
-msgstr ""
+msgstr "Отключить"
 
 #: class-wc-webmoney.php:350
 msgid "Имитировать успешное выполнение"
@@ -188,7 +186,7 @@ msgstr ""
 
 #: class-wc-webmoney.php:433
 msgid "Product number: "
-msgstr ""
+msgstr "Номер товара: "
 
 #: class-wc-webmoney.php:497
 msgid "Pay"
@@ -212,15 +210,15 @@ msgstr ""
 
 #: class-wc-webmoney.php:754
 msgid "Order successfully paid."
-msgstr ""
+msgstr "Счет успешно оплачен."
 
 #: class-wc-webmoney.php:763
 msgid "Payment error, please pay other time."
-msgstr ""
+msgstr "Ошибка платежа, пожалуйста повторите попытку позже."
 
 #: class-wc-webmoney.php:790
 msgid "The order has not been paid."
-msgstr ""
+msgstr "Счет не был оплачен."
 
 #. Plugin Name of the plugin/theme
 msgid "Woocommerce - Webmoney Payment Gateway"
