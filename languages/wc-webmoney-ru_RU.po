@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
-"POT-Creation-Date: 2016-01-08 04:03+0300\n"
-"PO-Revision-Date: 2016-01-08 04:15+0300\n"
+"POT-Creation-Date: 2016-01-08 04:55+0300\n"
+"PO-Revision-Date: 2016-01-08 04:58+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language: ru_RU\n"
@@ -63,25 +63,30 @@ msgstr "Язык интерфейса"
 
 #: class-wc-webmoney.php:270
 msgid ""
-"Вы определяете изначально сами, на каком языке интерфейс Webmoney должен "
-"отображаться для клиента"
-msgstr ""
+"What language interface displayed for the customer on Webmoney Transfer?"
+msgstr "Какой язык интерфейса отображается для клиента на Webmoney Transfer?"
 
 #: class-wc-webmoney.php:275
 msgid "Title"
 msgstr "Название"
 
 #: class-wc-webmoney.php:277
-msgid "Это название, которое пользователь видит во время оплаты."
-msgstr ""
+msgid "This is the name that the user sees during the payment."
+msgstr "Заголовок, который видит пользователь в процессе оформления заказа."
 
 #: class-wc-webmoney.php:282
 msgid "Description"
 msgstr "Описание"
 
 #: class-wc-webmoney.php:284
-msgid "Описанием метода оплаты которое клиент будет видеть на вашем сайте."
-msgstr ""
+msgid ""
+"Description of the method of payment that the customer will see on our "
+"website."
+msgstr "Описанием метода оплаты которое клиент будет видеть на вашем сайте."
+
+#: class-wc-webmoney.php:285
+msgid "Payment by Webmoney."
+msgstr "Оплата с помощью Webmoney"
 
 #: class-wc-webmoney.php:288
 msgid "Wallets"
@@ -96,10 +101,12 @@ msgid ""
 "Dollars webmoney purse to which the buyer has to make a payment for billing "
 "in dollars."
 msgstr ""
+"Долларовый WebMoney кошелек, на который покупатель должен произвести оплату "
+"счетов в долларах."
 
 #: class-wc-webmoney.php:297
 msgid "Z"
-msgstr ""
+msgstr "Z"
 
 #: class-wc-webmoney.php:301
 msgid "Wallet WME"
@@ -110,6 +117,8 @@ msgid ""
 "Euros webmoney purse to which the buyer has to make a payment for billing in "
 "euros."
 msgstr ""
+"Евровый WebMoney кошелек, на который покупатель должен произвести оплату "
+"счетов в евро."
 
 #: class-wc-webmoney.php:304
 msgid "E"
@@ -124,6 +133,8 @@ msgid ""
 "Russian rubles webmoney purse to which the buyer has to make a payment for "
 "billing in rubles."
 msgstr ""
+"Рублевый WebMoney кошелек, на который покупатель должен произвести оплату "
+"счетов в рублях."
 
 #: class-wc-webmoney.php:311
 msgid "R"
@@ -138,10 +149,12 @@ msgid ""
 "UAH webmoney purse to which the buyer has to make a payment for billing in "
 "UAH."
 msgstr ""
+"Гривновый WebMoney кошелек, на который покупатель должен произвести оплату "
+"счетов в гривнах."
 
 #: class-wc-webmoney.php:318
 msgid "U"
-msgstr ""
+msgstr "U"
 
 #: class-wc-webmoney.php:322
 msgid "Secret key"
@@ -159,64 +172,69 @@ msgstr "Технические детали"
 msgid "Signature method"
 msgstr "Метод подписи"
 
-#: class-wc-webmoney.php:343
+#: class-wc-webmoney.php:344
 msgid "Test mode"
 msgstr "Тестовый режим"
 
-#: class-wc-webmoney.php:345
-msgid "Test gateway."
-msgstr ""
+#: class-wc-webmoney.php:346
+msgid "The field is used only in the test mode."
+msgstr "Данное поле используется только в тестовом режиме."
 
-#: class-wc-webmoney.php:349
+#: class-wc-webmoney.php:350
 msgid "Off"
 msgstr "Отключить"
 
-#: class-wc-webmoney.php:350
-msgid "Имитировать успешное выполнение"
-msgstr ""
-
 #: class-wc-webmoney.php:351
-msgid "Имитировать выполнение с ошибкой"
+msgid "All test payments will be successful"
 msgstr ""
+"Для всех тестовых платежей сервис будет имитировать успешное выполнение"
 
 #: class-wc-webmoney.php:352
-#, php-format
-msgid "80% - success, 20% - fail"
+msgid "All test payments will fail"
 msgstr ""
+"Для всех тестовых платежей сервис будет имитировать выполнение с ошибкой "
+"(платеж не выполнен)"
 
-#: class-wc-webmoney.php:433
+#: class-wc-webmoney.php:353
+#, php-format
+msgid ""
+"80%% of test payments will be successful, 20%% of test payments will fail"
+msgstr "80%% платежей успешно, 20%% не успешно"
+
+#: class-wc-webmoney.php:434
 msgid "Product number: "
 msgstr "Номер товара: "
 
-#: class-wc-webmoney.php:497
+#: class-wc-webmoney.php:498
 msgid "Pay"
 msgstr "Оплатить"
 
-#: class-wc-webmoney.php:498
+#: class-wc-webmoney.php:499
 msgid "Cancel & return to cart"
 msgstr "Отменить и вернутся в корзину"
 
-#: class-wc-webmoney.php:512
+#: class-wc-webmoney.php:513
 msgid "Payment completed."
 msgstr "Платеж успешно завершен."
 
-#: class-wc-webmoney.php:535
-msgid "Спасибо за Ваш заказ, пожалуйста, нажмите кнопку ниже, чтобы заплатить."
+#: class-wc-webmoney.php:536
+msgid "Thank you for your order, please press the button below to pay."
 msgstr ""
+"Спасибо за ваш заказ, пожалуйста, нажмите ниже на кнопку, чтобы заплатить."
 
-#: class-wc-webmoney.php:739
+#: class-wc-webmoney.php:740
 msgid "Order successfully paid (TEST MODE)."
-msgstr ""
+msgstr "Счет успешно оплачен (ТЕСТОВЫЙ ПЛАТЕЖ)"
 
-#: class-wc-webmoney.php:754
+#: class-wc-webmoney.php:755
 msgid "Order successfully paid."
 msgstr "Счет успешно оплачен."
 
-#: class-wc-webmoney.php:763
+#: class-wc-webmoney.php:764
 msgid "Payment error, please pay other time."
 msgstr "Ошибка платежа, пожалуйста повторите попытку позже."
 
-#: class-wc-webmoney.php:790
+#: class-wc-webmoney.php:791
 msgid "The order has not been paid."
 msgstr "Счет не был оплачен."
 
@@ -225,9 +243,8 @@ msgid "Woocommerce - Webmoney Payment Gateway"
 msgstr "Woocommerce - платежный шлюз для  Webmoney"
 
 #. Plugin URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "https://mofsy.ru"
-msgstr ""
+msgid "https://wordpress.org/plugins/woocommerce-webmoney"
+msgstr "https://wordpress.org/plugins/woocommerce-webmoney"
 
 #. Description of the plugin/theme
 msgid "Allows you to use Webmoney payment gateway with the WooCommerce plugin."
@@ -237,8 +254,6 @@ msgstr "Позволяет использовать платежный шлюз 
 msgid "Mofsy"
 msgstr "Мофси"
 
-#~ msgid "Logging"
-#~ msgstr "Логирование"
-
-#~ msgid "Пожалуйста введите Secret key"
-#~ msgstr "Пожалуйста введите секретный ключ"
+#. Author URI of the plugin/theme
+msgid "https://mofsy.ru"
+msgstr "https://mofsy.ru"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
-"POT-Creation-Date: 2016-01-08 04:02+0300\n"
+"POT-Creation-Date: 2016-01-08 04:55+0300\n"
 "PO-Revision-Date: 2016-01-05 19:06+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
@@ -62,8 +62,7 @@ msgstr ""
 
 #: class-wc-webmoney.php:270
 msgid ""
-"Вы определяете изначально сами, на каком языке интерфейс Webmoney должен "
-"отображаться для клиента"
+"What language interface displayed for the customer on Webmoney Transfer?"
 msgstr ""
 
 #: class-wc-webmoney.php:275
@@ -71,7 +70,7 @@ msgid "Title"
 msgstr ""
 
 #: class-wc-webmoney.php:277
-msgid "Это название, которое пользователь видит во время оплаты."
+msgid "This is the name that the user sees during the payment."
 msgstr ""
 
 #: class-wc-webmoney.php:282
@@ -79,7 +78,13 @@ msgid "Description"
 msgstr ""
 
 #: class-wc-webmoney.php:284
-msgid "Описанием метода оплаты которое клиент будет видеть на вашем сайте."
+msgid ""
+"Description of the method of payment that the customer will see on our "
+"website."
+msgstr ""
+
+#: class-wc-webmoney.php:285
+msgid "Payment by Webmoney."
 msgstr ""
 
 #: class-wc-webmoney.php:288
@@ -158,64 +163,65 @@ msgstr ""
 msgid "Signature method"
 msgstr ""
 
-#: class-wc-webmoney.php:343
+#: class-wc-webmoney.php:344
 msgid "Test mode"
 msgstr ""
 
-#: class-wc-webmoney.php:345
-msgid "Test gateway."
-msgstr ""
-
-#: class-wc-webmoney.php:349
-msgid "Off"
+#: class-wc-webmoney.php:346
+msgid "The field is used only in the test mode."
 msgstr ""
 
 #: class-wc-webmoney.php:350
-msgid "Имитировать успешное выполнение"
+msgid "Off"
 msgstr ""
 
 #: class-wc-webmoney.php:351
-msgid "Имитировать выполнение с ошибкой"
+msgid "All test payments will be successful"
 msgstr ""
 
 #: class-wc-webmoney.php:352
-#, php-format
-msgid "80% - success, 20% - fail"
+msgid "All test payments will fail"
 msgstr ""
 
-#: class-wc-webmoney.php:433
+#: class-wc-webmoney.php:353
+#, php-format
+msgid ""
+"80%% of test payments will be successful, 20%% of test payments will fail"
+msgstr ""
+
+#: class-wc-webmoney.php:434
 msgid "Product number: "
 msgstr ""
 
-#: class-wc-webmoney.php:497
+#: class-wc-webmoney.php:498
 msgid "Pay"
 msgstr ""
 
-#: class-wc-webmoney.php:498
+#: class-wc-webmoney.php:499
 msgid "Cancel & return to cart"
 msgstr ""
 
-#: class-wc-webmoney.php:512
+#: class-wc-webmoney.php:513
 msgid "Payment completed."
 msgstr ""
 
-#: class-wc-webmoney.php:535
-msgid "Спасибо за Ваш заказ, пожалуйста, нажмите кнопку ниже, чтобы заплатить."
+#: class-wc-webmoney.php:536
+msgid "Thank you for your order, please press the button below to pay."
 msgstr ""
 
-#: class-wc-webmoney.php:739
+#: class-wc-webmoney.php:740
 msgid "Order successfully paid (TEST MODE)."
 msgstr ""
 
-#: class-wc-webmoney.php:754
+#: class-wc-webmoney.php:755
 msgid "Order successfully paid."
 msgstr ""
 
-#: class-wc-webmoney.php:763
+#: class-wc-webmoney.php:764
 msgid "Payment error, please pay other time."
 msgstr ""
 
-#: class-wc-webmoney.php:790
+#: class-wc-webmoney.php:791
 msgid "The order has not been paid."
 msgstr ""
 
@@ -224,8 +230,7 @@ msgid "Woocommerce - Webmoney Payment Gateway"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "https://mofsy.ru"
+msgid "https://wordpress.org/plugins/woocommerce-webmoney"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -234,4 +239,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Mofsy"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://mofsy.ru"
 msgstr ""

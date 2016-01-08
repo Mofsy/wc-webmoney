@@ -267,25 +267,25 @@ class WC_Webmoney extends WC_Payment_Gateway
                     'ru' => 'Russian',
                     'en' => 'English'
                 ),
-                'description' => __( 'Вы определяете изначально сами, на каком языке интерфейс Webmoney должен отображаться для клиента', 'wc-webmoney' ),
+                'description' => __( 'What language interface displayed for the customer on Webmoney Transfer?', 'wc-webmoney' ),
                 'default' => 'ru'
             ),
             'title' => array
             (
                 'title' => __('Title', 'wc-webmoney'),
                 'type' => 'text',
-                'description' => __( 'Это название, которое пользователь видит во время оплаты.', 'wc-webmoney' ),
+                'description' => __( 'This is the name that the user sees during the payment.', 'wc-webmoney' ),
                 'default' => __('Webmoney', 'wc-webmoney')
             ),
             'description' => array
             (
                 'title' => __( 'Description', 'wc-webmoney' ),
                 'type' => 'textarea',
-                'description' => __( 'Описанием метода оплаты которое клиент будет видеть на вашем сайте.', 'wc-webmoney' ),
-                'default' => 'Оплата с помощью Webmoney.'
+                'description' => __( 'Description of the method of payment that the customer will see on our website.', 'wc-webmoney' ),
+                'default' => __( 'Payment by Webmoney.', 'wc-webmoney' )
             ),
             'wallets' => array(
-                'title'       => __( 'Wallets', 'woocommerce' ),
+                'title'       => __( 'Wallets', 'wc-webmoney' ),
                 'type'        => 'title',
                 'description' => '',
             ),
@@ -339,17 +339,18 @@ class WC_Webmoney extends WC_Payment_Gateway
                 ),
                 'default' => 'sha256'
             ),
-            'test' => array(
+            'test' => array
+            (
                 'title' => __( 'Test mode', 'wc-webmoney' ),
                 'type'        => 'select',
-                'description'	=>  __( 'Test gateway.', 'wc-webmoney' ),
+                'description'	=>  __( 'The field is used only in the test mode.', 'wc-webmoney' ),
                 'default'	=> '2',
                 'options'     => array
                 (
                     '' => __( 'Off', 'wc-webmoney' ),
-                    '0' => __( 'Имитировать успешное выполнение', 'wc-webmoney' ),
-                    '1' => __( 'Имитировать выполнение с ошибкой', 'wc-webmoney' ),
-                    '2' => __( '80% - success, 20% - fail', 'wc-webmoney' ),
+                    '0' => __( 'All test payments will be successful', 'wc-webmoney' ),
+                    '1' => __( 'All test payments will fail', 'wc-webmoney' ),
+                    '2' => __( '80%% of test payments will be successful, 20%% of test payments will fail', 'wc-webmoney' ),
                 )
             )
         );
@@ -532,7 +533,7 @@ class WC_Webmoney extends WC_Payment_Gateway
      **/
     public function receipt_page($order)
     {
-        echo '<p>'.__('Спасибо за Ваш заказ, пожалуйста, нажмите кнопку ниже, чтобы заплатить.', 'wc-webmoney').'</p>';
+        echo '<p>'.__('Thank you for your order, please press the button below to pay.', 'wc-webmoney').'</p>';
         echo $this->generate_form($order);
     }
 
