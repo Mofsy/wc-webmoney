@@ -247,7 +247,7 @@ class WC_Webmoney extends WC_Payment_Gateway
                 'default' => 'yes'
             ),
             'interface' => array(
-                'title'       => __( 'Interface', 'woocommerce' ),
+                'title'       => __( 'Interface', 'wc-webmoney' ),
                 'type'        => 'title',
                 'description' => '',
             ),
