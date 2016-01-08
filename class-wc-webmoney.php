@@ -200,12 +200,25 @@ class WC_Webmoney extends WC_Payment_Gateway
      */
     public function is_valid_for_use()
     {
-        if (in_array($this->currency, array('RUB', 'EUR', 'USD', 'UAH'), false ))
+        $return = true;
+
+        /**
+         * Check allow currency
+         */
+        if (!in_array($this->currency, array('RUB', 'EUR', 'USD', 'UAH'), false ))
         {
-            return true;
+            $return = false;
         }
 
-        return false;
+        /**
+         * Check test mode and admin rights
+         */
+        if ($this->test !== '' && !current_user_can( 'manage_options' ))
+        {
+            $return = false;
+        }
+
+        return $return;
     }
 
     /**
