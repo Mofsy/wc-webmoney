@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
-"POT-Creation-Date: 2016-01-05 19:27+0300\n"
+"POT-Creation-Date: 2016-01-08 04:02+0300\n"
 "PO-Revision-Date: 2016-01-05 19:06+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
@@ -20,135 +20,203 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: classes/WC_Webmoney.php:162 classes/WC_Webmoney.php:238
+#: class-wc-webmoney.php:217 class-wc-webmoney.php:278
 msgid "Webmoney"
 msgstr ""
 
-#: classes/WC_Webmoney.php:163
+#: class-wc-webmoney.php:218
 msgid "Setting receiving payments through Webmoney Merchant."
 msgstr ""
 
-#: classes/WC_Webmoney.php:177
+#: class-wc-webmoney.php:227
 msgid "Gateway offline"
 msgstr ""
 
-#: classes/WC_Webmoney.php:177
+#: class-wc-webmoney.php:227
 msgid "Webmoney does not support the currency your store."
 msgstr ""
 
-#: classes/WC_Webmoney.php:191
-msgid "Включить логирование (<code>woocommerce/logs/"
-msgstr ""
-
-#: classes/WC_Webmoney.php:209
+#: class-wc-webmoney.php:244
 msgid "Online/Offline gateway"
 msgstr ""
 
-#: classes/WC_Webmoney.php:211
+#: class-wc-webmoney.php:246
 msgid "Online"
 msgstr ""
 
-#: classes/WC_Webmoney.php:216
+#: class-wc-webmoney.php:250
+msgid "Interface"
+msgstr ""
+
+#: class-wc-webmoney.php:256
 msgid "Show gateway icon?"
 msgstr ""
 
-#: classes/WC_Webmoney.php:218
+#: class-wc-webmoney.php:258
 msgid "Show"
 msgstr ""
 
-#: classes/WC_Webmoney.php:223
+#: class-wc-webmoney.php:263
 msgid "Language interface"
 msgstr ""
 
-#: classes/WC_Webmoney.php:230
+#: class-wc-webmoney.php:270
 msgid ""
 "Вы определяете изначально сами, на каком языке интерфейс Webmoney должен "
 "отображаться для клиента"
 msgstr ""
 
-#: classes/WC_Webmoney.php:235
+#: class-wc-webmoney.php:275
 msgid "Title"
 msgstr ""
 
-#: classes/WC_Webmoney.php:237 classes/WC_Webmoney.php:244
-#: classes/WC_Webmoney.php:251 classes/WC_Webmoney.php:258
+#: class-wc-webmoney.php:277
 msgid "Это название, которое пользователь видит во время оплаты."
 msgstr ""
 
-#: classes/WC_Webmoney.php:242
-msgid "Wallet WMZ"
-msgstr ""
-
-#: classes/WC_Webmoney.php:245
-msgid "Z"
-msgstr ""
-
-#: classes/WC_Webmoney.php:249
-msgid "Wallet WME"
-msgstr ""
-
-#: classes/WC_Webmoney.php:252
-msgid "E"
-msgstr ""
-
-#: classes/WC_Webmoney.php:256
-msgid "Wallet WMR"
-msgstr ""
-
-#: classes/WC_Webmoney.php:259
-msgid "R"
-msgstr ""
-
-#: classes/WC_Webmoney.php:263
-msgid "Secret key"
-msgstr ""
-
-#: classes/WC_Webmoney.php:265
-msgid "Пожалуйста введите Secret key"
-msgstr ""
-
-#: classes/WC_Webmoney.php:270
-msgid "Test mode"
-msgstr ""
-
-#: classes/WC_Webmoney.php:272
-msgid "Включен"
-msgstr ""
-
-#: classes/WC_Webmoney.php:273
-msgid "В этом режиме плата за товар не снимается."
-msgstr ""
-
-#: classes/WC_Webmoney.php:278
-msgid "Logging"
-msgstr ""
-
-#: classes/WC_Webmoney.php:285
+#: class-wc-webmoney.php:282
 msgid "Description"
 msgstr ""
 
-#: classes/WC_Webmoney.php:287
+#: class-wc-webmoney.php:284
 msgid "Описанием метода оплаты которое клиент будет видеть на вашем сайте."
 msgstr ""
 
-#: classes/WC_Webmoney.php:376
-msgid "Оплатить"
+#: class-wc-webmoney.php:288
+msgid "Wallets"
 msgstr ""
 
-#: classes/WC_Webmoney.php:376
-msgid "Отказаться от оплаты & вернуться в корзину"
+#: class-wc-webmoney.php:294
+msgid "Wallet WMZ"
 msgstr ""
 
-#: classes/WC_Webmoney.php:406
+#: class-wc-webmoney.php:296
+msgid ""
+"Dollars webmoney purse to which the buyer has to make a payment for billing "
+"in dollars."
+msgstr ""
+
+#: class-wc-webmoney.php:297
+msgid "Z"
+msgstr ""
+
+#: class-wc-webmoney.php:301
+msgid "Wallet WME"
+msgstr ""
+
+#: class-wc-webmoney.php:303
+msgid ""
+"Euros webmoney purse to which the buyer has to make a payment for billing in "
+"euros."
+msgstr ""
+
+#: class-wc-webmoney.php:304
+msgid "E"
+msgstr ""
+
+#: class-wc-webmoney.php:308
+msgid "Wallet WMR"
+msgstr ""
+
+#: class-wc-webmoney.php:310
+msgid ""
+"Russian rubles webmoney purse to which the buyer has to make a payment for "
+"billing in rubles."
+msgstr ""
+
+#: class-wc-webmoney.php:311
+msgid "R"
+msgstr ""
+
+#: class-wc-webmoney.php:315
+msgid "Wallet WMU"
+msgstr ""
+
+#: class-wc-webmoney.php:317
+msgid ""
+"UAH webmoney purse to which the buyer has to make a payment for billing in "
+"UAH."
+msgstr ""
+
+#: class-wc-webmoney.php:318
+msgid "U"
+msgstr ""
+
+#: class-wc-webmoney.php:322
+msgid "Secret key"
+msgstr ""
+
+#: class-wc-webmoney.php:324
+msgid "Please write Secret key"
+msgstr ""
+
+#: class-wc-webmoney.php:328
+msgid "Technical details"
+msgstr ""
+
+#: class-wc-webmoney.php:334
+msgid "Signature method"
+msgstr ""
+
+#: class-wc-webmoney.php:343
+msgid "Test mode"
+msgstr ""
+
+#: class-wc-webmoney.php:345
+msgid "Test gateway."
+msgstr ""
+
+#: class-wc-webmoney.php:349
+msgid "Off"
+msgstr ""
+
+#: class-wc-webmoney.php:350
+msgid "Имитировать успешное выполнение"
+msgstr ""
+
+#: class-wc-webmoney.php:351
+msgid "Имитировать выполнение с ошибкой"
+msgstr ""
+
+#: class-wc-webmoney.php:352
+#, php-format
+msgid "80% - success, 20% - fail"
+msgstr ""
+
+#: class-wc-webmoney.php:433
+msgid "Product number: "
+msgstr ""
+
+#: class-wc-webmoney.php:497
+msgid "Pay"
+msgstr ""
+
+#: class-wc-webmoney.php:498
+msgid "Cancel & return to cart"
+msgstr ""
+
+#: class-wc-webmoney.php:512
+msgid "Payment completed."
+msgstr ""
+
+#: class-wc-webmoney.php:535
 msgid "Спасибо за Ваш заказ, пожалуйста, нажмите кнопку ниже, чтобы заплатить."
 msgstr ""
 
-#: classes/WC_Webmoney.php:467
-msgid "Платеж не оплачен"
+#: class-wc-webmoney.php:739
+msgid "Order successfully paid (TEST MODE)."
 msgstr ""
 
-#: classes/WC_Webmoney.php:491
-msgid "Платеж успешно завершен."
+#: class-wc-webmoney.php:754
+msgid "Order successfully paid."
+msgstr ""
+
+#: class-wc-webmoney.php:763
+msgid "Payment error, please pay other time."
+msgstr ""
+
+#: class-wc-webmoney.php:790
+msgid "The order has not been paid."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
