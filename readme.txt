@@ -37,7 +37,7 @@ Localization support:
 
 == Installation ==
 = English =
-1. Archive extract and upload "woocommerce-webmoney" to /wp-content/plugins
+1. Archive extract and upload "wc-webmoney" to /wp-content/plugins
 2. Activation plugin
 3. Setting
 
@@ -51,7 +51,7 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 </ul>
 
 = Russian =
-1. Распакуйте архив и загрузите "woocommerce-webmoney" в папку /wp-content/plugins
+1. Распакуйте архив и загрузите "wc-webmoney" в папку /wp-content/plugins
 2. Активируйте плагин
 3. Настройте
 
