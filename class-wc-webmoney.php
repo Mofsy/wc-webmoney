@@ -159,6 +159,11 @@ class WC_Webmoney extends WC_Payment_Gateway
         $this->description = $this->get_option('description');
 
         /**
+         * Set order button text
+         */
+        $this->order_button_text = $this->get_option('order_button_text');
+
+        /**
          * Set WMR
          */
         if($this->get_option('purse_wmr_secret') !== '')
@@ -370,6 +375,13 @@ class WC_Webmoney extends WC_Payment_Gateway
                 'type' => 'text',
                 'description' => __( 'This is the name that the user sees during the payment.', 'wc-webmoney' ),
                 'default' => __('Webmoney', 'wc-webmoney')
+            ),
+            'order_button_text' => array
+            (
+                'title' => __('Order button text', 'wc-webmoney'),
+                'type' => 'text',
+                'description' => __( 'This is the button text that the user sees during the payment.', 'wc-webmoney' ),
+                'default' => __('Pay', 'wc-webmoney')
             ),
             'description' => array
             (
