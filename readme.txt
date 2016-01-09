@@ -1,6 +1,6 @@
-=== Woocommerce - Webmoney Payment Gateway===
+=== WooCommerce - Webmoney Payment Gateway===
 Contributors: Mofsy
-Tags: webmoney, payment gateway, woo commerce, woocommerce, ecommerce, gateway, woo webmoney, wmtransfer, merchant
+Tags: webmoney, payment gateway, woo commerce, woocommerce, ecommerce, gateway, woo webmoney, wmtransfer, merchant, woo
 Requires at least: 3.0
 Tested up to: 4.4.1
 Stable tag: trunk
@@ -13,7 +13,7 @@ Donate link: https://mofsy.ru/about/help
 == Description ==
 = English =
 Allows you to use Webmoney payment gateway with the WooCommerce plugin.
-This is the best payment gateway plugin for Webmoney, because it is the most integrated with Webmoney Merchant capabilities and is available for most versions Woocommerce and Wordpress.
+This is the best payment gateway plugin for Webmoney, because it is the most integrated with Webmoney Merchant capabilities and is available for most versions WooCommerce and Wordpress.
 
 Error found? [bug report](https://mofsy.ru/contacts/email)
 
@@ -25,7 +25,7 @@ Localization support:
 
 = Russian =
 Позволяет использовать платежный шлюз Webmoney с плагином WooCommerce.
-Это самый лучший плагин платежного шлюза для Webmoney, т.к. он максимально интегрирован с возможностями Webmoney Merchant и доступен под большинство версий Woocommerce и Wordpress.
+Это самый лучший плагин платежного шлюза для Webmoney, т.к. он максимально интегрирован с возможностями Webmoney Merchant и доступен под большинство версий WooCommerce и Wordpress.
 
 Нашли ошибку? [напишите об этом](https://mofsy.ru/contacts/email)
 
