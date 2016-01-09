@@ -81,7 +81,7 @@ class WC_Webmoney extends WC_Payment_Gateway
     /**
      * @var mixed
      */
-    public $test = false;
+    public $test = '';
 
     /**
      * WC_Webmoney constructor
