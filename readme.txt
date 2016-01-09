@@ -72,6 +72,12 @@ New settings save
 Просто пере-сохраните настройки
 
 == Changelog ==
+= 0.3.0.3 =
+* Fix version
+
+= 0.3.0.2 =
+* Fix readme.txt
+
 = 0.3.0.1 =
 * Fix test mode
 * Add renaming order button text
