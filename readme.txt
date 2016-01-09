@@ -77,7 +77,6 @@ New settings save
 * Add renaming order button text
 * Update language files
 
-== Changelog ==
 = 0.2.2.1 =
 * Fix readme
 
