@@ -72,5 +72,8 @@ New settings save
 Просто пере-сохраните настройки
 
 == Changelog ==
-= 0.1.0.1 =
+= 0.2.2.1 =
+* Fix readme
+
+= 0.2.1.1 =
 * Init release
