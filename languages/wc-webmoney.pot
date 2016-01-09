@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
-"POT-Creation-Date: 2016-01-08 20:16+0300\n"
+"POT-Creation-Date: 2016-01-09 21:55+0300\n"
 "PO-Revision-Date: 2016-01-05 19:06+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
@@ -20,280 +20,288 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: class-wc-webmoney.php:299 class-wc-webmoney.php:372
+#: class-wc-webmoney.php:304 class-wc-webmoney.php:377
 msgid "Webmoney"
 msgstr ""
 
-#: class-wc-webmoney.php:300
+#: class-wc-webmoney.php:305
 msgid "Setting receiving payments through Webmoney Merchant."
 msgstr ""
 
-#: class-wc-webmoney.php:309
+#: class-wc-webmoney.php:314
 msgid "Gateway offline"
 msgstr ""
 
-#: class-wc-webmoney.php:309
+#: class-wc-webmoney.php:314
 msgid "Webmoney does not support the currency your store."
 msgstr ""
 
-#: class-wc-webmoney.php:326
+#: class-wc-webmoney.php:331
 msgid "Online/Offline gateway"
 msgstr ""
 
-#: class-wc-webmoney.php:328
+#: class-wc-webmoney.php:333
 msgid "Online"
 msgstr ""
 
-#: class-wc-webmoney.php:332
+#: class-wc-webmoney.php:337
 msgid "Interface"
 msgstr ""
 
-#: class-wc-webmoney.php:338
+#: class-wc-webmoney.php:343
 msgid "Show gateway icon?"
 msgstr ""
 
-#: class-wc-webmoney.php:340
+#: class-wc-webmoney.php:345
 msgid "Show"
 msgstr ""
 
-#: class-wc-webmoney.php:345
+#: class-wc-webmoney.php:350
 msgid "Language interface"
 msgstr ""
 
-#: class-wc-webmoney.php:349
+#: class-wc-webmoney.php:354
 msgid "Russian"
 msgstr ""
 
-#: class-wc-webmoney.php:350
+#: class-wc-webmoney.php:355
 msgid "English"
 msgstr ""
 
-#: class-wc-webmoney.php:352
+#: class-wc-webmoney.php:357
 msgid ""
 "What language interface displayed for the customer on Webmoney Transfer?"
 msgstr ""
 
-#: class-wc-webmoney.php:357
+#: class-wc-webmoney.php:362
 msgid "Language based on the locale?"
 msgstr ""
 
-#: class-wc-webmoney.php:361
+#: class-wc-webmoney.php:366
 msgid "Yes"
 msgstr ""
 
-#: class-wc-webmoney.php:362
+#: class-wc-webmoney.php:367
 msgid "No"
 msgstr ""
 
-#: class-wc-webmoney.php:364
+#: class-wc-webmoney.php:369
 msgid "Trying to get the language based on the locale?"
 msgstr ""
 
-#: class-wc-webmoney.php:369
+#: class-wc-webmoney.php:374
 msgid "Title"
 msgstr ""
 
-#: class-wc-webmoney.php:371
+#: class-wc-webmoney.php:376
 msgid "This is the name that the user sees during the payment."
 msgstr ""
 
-#: class-wc-webmoney.php:376
+#: class-wc-webmoney.php:381
+msgid "Order button text"
+msgstr ""
+
+#: class-wc-webmoney.php:383
+msgid "This is the button text that the user sees during the payment."
+msgstr ""
+
+#: class-wc-webmoney.php:384 class-wc-webmoney.php:635
+msgid "Pay"
+msgstr ""
+
+#: class-wc-webmoney.php:388
 msgid "Description"
 msgstr ""
 
-#: class-wc-webmoney.php:378
+#: class-wc-webmoney.php:390
 msgid ""
 "Description of the method of payment that the customer will see on our "
 "website."
 msgstr ""
 
-#: class-wc-webmoney.php:379
+#: class-wc-webmoney.php:391
 msgid "Payment by Webmoney."
 msgstr ""
 
-#: class-wc-webmoney.php:382
+#: class-wc-webmoney.php:394
 msgid "Purses"
 msgstr ""
 
-#: class-wc-webmoney.php:388
+#: class-wc-webmoney.php:400
 msgid "Purse WMZ"
 msgstr ""
 
-#: class-wc-webmoney.php:390
+#: class-wc-webmoney.php:402
 msgid ""
 "Dollars webmoney purse to which the buyer has to make a payment for billing "
 "in dollars."
 msgstr ""
 
-#: class-wc-webmoney.php:391
+#: class-wc-webmoney.php:403
 msgid "Z"
 msgstr ""
 
-#: class-wc-webmoney.php:395
+#: class-wc-webmoney.php:407
 msgid "Secret key for WMZ"
 msgstr ""
 
-#: class-wc-webmoney.php:397
+#: class-wc-webmoney.php:409
 msgid "Please write Secret key for WMZ purse."
 msgstr ""
 
-#: class-wc-webmoney.php:402
+#: class-wc-webmoney.php:414
 msgid "Purse WME"
 msgstr ""
 
-#: class-wc-webmoney.php:404
+#: class-wc-webmoney.php:416
 msgid ""
 "Euros webmoney purse to which the buyer has to make a payment for billing in "
 "euros."
 msgstr ""
 
-#: class-wc-webmoney.php:405
+#: class-wc-webmoney.php:417
 msgid "E"
 msgstr ""
 
-#: class-wc-webmoney.php:409
+#: class-wc-webmoney.php:421
 msgid "Secret key for WME"
 msgstr ""
 
-#: class-wc-webmoney.php:411
+#: class-wc-webmoney.php:423
 msgid "Please write Secret key for WME purse."
 msgstr ""
 
-#: class-wc-webmoney.php:416
+#: class-wc-webmoney.php:428
 msgid "Purse WMR"
 msgstr ""
 
-#: class-wc-webmoney.php:418
+#: class-wc-webmoney.php:430
 msgid ""
 "Russian rubles webmoney purse to which the buyer has to make a payment for "
 "billing in rubles."
 msgstr ""
 
-#: class-wc-webmoney.php:419
+#: class-wc-webmoney.php:431
 msgid "R"
 msgstr ""
 
-#: class-wc-webmoney.php:423
+#: class-wc-webmoney.php:435
 msgid "Secret key for WMR"
 msgstr ""
 
-#: class-wc-webmoney.php:425
+#: class-wc-webmoney.php:437
 msgid "Please write Secret key for WMR purse."
 msgstr ""
 
-#: class-wc-webmoney.php:430
+#: class-wc-webmoney.php:442
 msgid "Purse WMU"
 msgstr ""
 
-#: class-wc-webmoney.php:432
+#: class-wc-webmoney.php:444
 msgid ""
 "UAH webmoney purse to which the buyer has to make a payment for billing in "
 "UAH."
 msgstr ""
 
-#: class-wc-webmoney.php:433
+#: class-wc-webmoney.php:445
 msgid "U"
 msgstr ""
 
-#: class-wc-webmoney.php:437
+#: class-wc-webmoney.php:449
 msgid "Secret key for WMU"
 msgstr ""
 
-#: class-wc-webmoney.php:439
+#: class-wc-webmoney.php:451
 msgid "Please write Secret key for WMU purse."
 msgstr ""
 
-#: class-wc-webmoney.php:443
+#: class-wc-webmoney.php:455
 msgid "Technical details"
 msgstr ""
 
-#: class-wc-webmoney.php:449
+#: class-wc-webmoney.php:461
 msgid "Signature method"
 msgstr ""
 
-#: class-wc-webmoney.php:459
+#: class-wc-webmoney.php:471
 msgid "Test mode"
 msgstr ""
 
-#: class-wc-webmoney.php:461
+#: class-wc-webmoney.php:473
 msgid "The field is used only in the test mode."
 msgstr ""
 
-#: class-wc-webmoney.php:465
+#: class-wc-webmoney.php:477
 msgid "Off"
 msgstr ""
 
-#: class-wc-webmoney.php:466
+#: class-wc-webmoney.php:478
 msgid "All test payments will be successful"
 msgstr ""
 
-#: class-wc-webmoney.php:467
+#: class-wc-webmoney.php:479
 msgid "All test payments will fail"
 msgstr ""
 
-#: class-wc-webmoney.php:468
+#: class-wc-webmoney.php:480
 #, php-format
 msgid ""
 "80%% of test payments will be successful, 20%% of test payments will fail"
 msgstr ""
 
-#: class-wc-webmoney.php:549
+#: class-wc-webmoney.php:561
 msgid "Product number: "
 msgstr ""
 
-#: class-wc-webmoney.php:623
-msgid "Pay"
-msgstr ""
-
-#: class-wc-webmoney.php:624
+#: class-wc-webmoney.php:636
 msgid "Cancel & return to cart"
 msgstr ""
 
-#: class-wc-webmoney.php:638
+#: class-wc-webmoney.php:650
 msgid "The client started to pay."
 msgstr ""
 
-#: class-wc-webmoney.php:661
+#: class-wc-webmoney.php:673
 msgid "Thank you for your order, please press the button below to pay."
 msgstr ""
 
-#: class-wc-webmoney.php:840
+#: class-wc-webmoney.php:852
 #, php-format
 msgid "Webmoney PRE request success. WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr ""
 
-#: class-wc-webmoney.php:861
+#: class-wc-webmoney.php:873
 #, php-format
 msgid "Validate hash error. Local: %1$s Remote: %2$s"
 msgstr ""
 
-#: class-wc-webmoney.php:874
+#: class-wc-webmoney.php:886
 #, php-format
 msgid "Validate secret key error. Local: %1$s Remote: %2$s"
 msgstr ""
 
-#: class-wc-webmoney.php:911
+#: class-wc-webmoney.php:923
 #, php-format
 msgid ""
 "Order successfully paid (TEST MODE). WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr ""
 
-#: class-wc-webmoney.php:921
+#: class-wc-webmoney.php:933
 #, php-format
 msgid "Order successfully paid. WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr ""
 
-#: class-wc-webmoney.php:935 class-wc-webmoney.php:942
+#: class-wc-webmoney.php:947 class-wc-webmoney.php:954
 msgid "Payment error, please pay other time."
 msgstr ""
 
-#: class-wc-webmoney.php:967
+#: class-wc-webmoney.php:979
 #, php-format
 msgid "The order has not been paid. WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "Woocommerce - Webmoney Payment Gateway"
+msgid "WooCommerce - Webmoney Payment Gateway"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
