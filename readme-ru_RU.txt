@@ -41,6 +41,8 @@ Donate link: https://mofsy.ru/about/help
 Просто пере-сохраните настройки
 
 == Changelog ==
+= 0.3.0.5 =
+* Fix version
 
 = 0.3.0.4 =
 * Fix readme

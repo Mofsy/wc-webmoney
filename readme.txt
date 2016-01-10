@@ -42,6 +42,8 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 New settings save
 
 == Changelog ==
+= 0.3.0.5 =
+* Fix version
 
 = 0.3.0.4 =
 * Fix readme
