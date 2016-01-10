@@ -8,11 +8,6 @@
   +----------------------------------------------------------+
 */
 
-if(!defined('ABSPATH'))
-{
-    exit;
-}
-
 class WC_Webmoney extends WC_Payment_Gateway
 {
     /**
