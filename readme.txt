@@ -75,6 +75,10 @@ New settings save
 == Changelog ==
 = 0.3.0.5 =
 * Fix version
+* Fix readme
+
+= 0.3.0.5 =
+* Fix version
 
 = 0.3.0.4 =
 * Fix readme
