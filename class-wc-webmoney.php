@@ -231,6 +231,11 @@ class WC_Webmoney extends WC_Payment_Gateway
         {
             $this->enabled = false;
         }
+
+        /**
+         * Notice show
+         */
+        add_action( 'admin_notices',  array($this, 'all_notice') );
     }
 
     /**
@@ -1024,5 +1029,23 @@ class WC_Webmoney extends WC_Payment_Gateway
         //$order->add_order_note( sprintf( __( 'Refunded %s - Refund ID: %s', 'woocommerce' ), $result['GROSSREFUNDAMT'], $result['REFUNDTRANSACTIONID'] ) );
 
         return true;
+    }
+
+    /**
+     * Display the all notice
+     **/
+    public function all_notice()
+    {
+        /**
+         * Test mode on
+         */
+        if ( '' !== $this->test)
+        {
+            ?>
+            <div class="update-nag">
+                Webmoney test mode is enabled. Click <a href="<?php echo get_bloginfo('wpurl') ?>/wp-admin/admin.php?page=wc-settings&tab=checkout&section=wc_webmoney">here</a> to disable it when you want to start accepting live payment on your site.
+            </div>
+            <?php
+        }
     }
 }
