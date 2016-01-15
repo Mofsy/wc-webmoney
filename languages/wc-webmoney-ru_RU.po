@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
-"POT-Creation-Date: 2016-01-10 00:21+0300\n"
-"PO-Revision-Date: 2016-01-10 00:22+0300\n"
+"POT-Creation-Date: 2016-01-15 14:38+0300\n"
+"PO-Revision-Date: 2016-01-15 14:39+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language: ru_RU\n"
@@ -315,6 +315,19 @@ msgstr "Ошибка платежа, пожалуйста повторите п�
 #, php-format
 msgid "The order has not been paid. WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr "Счет не был оплачен. WMID: %1$s Кошелек: %2$s IP: %3$s"
+
+#: class-wc-webmoney.php:1047
+msgid "here"
+msgstr "сюда"
+
+#: class-wc-webmoney.php:1048
+#, php-format
+msgid ""
+"Webmoney test mode is enabled. Click %s -  to disable it when you want to "
+"start accepting live payment on your site."
+msgstr ""
+"В шлюзе Webmoney активирован тестовый режим. Нажмите %s - для отключения "
+"режима и включения приема реальных платежей на вашем сайте."
 
 #. Plugin Name of the plugin/theme
 msgid "WooCommerce - Webmoney Payment Gateway"
