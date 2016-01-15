@@ -162,6 +162,19 @@ class WC_Webmoney extends WC_Payment_Gateway
         $this->test = $this->get_option('test');
 
         /**
+         * Gateway enabled?
+         */
+        if($this->get_option('enabled') !== 'yes')
+        {
+            $this->enabled = false;
+
+            /**
+             * Logger notice
+             */
+            $this->logger->addNotice('Gateway is NOT enabled.');
+        }
+
+        /**
          * Test mode notice show
          */
         if ( '' !== $this->test)
@@ -339,7 +352,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Logger notice
          */
-        $this->logger->addNotice('Add new puse for currency:' . $currency);
+        $this->logger->addNotice('Add new purse for currency: ' . $currency);
 
         /**
          * Add purse to buffer
