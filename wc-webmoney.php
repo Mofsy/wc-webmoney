@@ -111,11 +111,18 @@ function wc_webmoney_report_javascript() { ?>
 
             $(document).ready(function()
             {
-                $('a.report').click(function()
+                $('.report a').click(function()
                 {
                     $.post(wc_webmoney_url_callback, data, function(response)
                     {
-                        alert('Got this from the server: ' + response);
+                        if(response == 'ok')
+                        {
+                            $('.report').html('оке');
+                        }
+                        else
+                        {
+                            $('.report').html('ошибка');
+                        }
                     });
 
                     return false;
