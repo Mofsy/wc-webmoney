@@ -152,20 +152,23 @@ class WC_Webmoney_Logger
             return false;
         }
 
+        $content = array
+        (
+            $level,
+            $this->levels[$level],
+            $this->dt->format(DATE_ATOM),
+            $message
+        );
+
+        if(is_object($object))
+        {
+            $content[print_r($object, true) . PHP_EOL];
+        }
+
         /**
          * Content
          */
-        $content = implode
-        (' -|- ',
-            array
-            (
-                $level,
-                $this->levels[$level],
-                $this->dt->format(DATE_ATOM),
-                $message,
-                print_r($object, true) . PHP_EOL
-            )
-        );
+        $content = implode(' -|||- ', $content);
 
         file_put_contents
         (
