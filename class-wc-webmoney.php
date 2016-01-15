@@ -79,6 +79,13 @@ class WC_Webmoney extends WC_Payment_Gateway
     public $test = '';
 
     /**
+     * Logger
+     *
+     * @var WC_Webmoney_Logger
+     */
+    public $logger;
+
+    /**
      * WC_Webmoney constructor
      */
     public function __construct()
@@ -118,6 +125,14 @@ class WC_Webmoney extends WC_Payment_Gateway
          * Testing?
          */
         $this->test = $this->get_option('test');
+
+        /**
+         * Test mode notice show
+         */
+        if ( '' !== $this->test)
+        {
+            add_action( 'admin_notices',  array($this, 'test_notice'), 10, 1 );
+        }
 
         /**
          * Default language for webmoney interface
@@ -232,10 +247,6 @@ class WC_Webmoney extends WC_Payment_Gateway
             $this->enabled = false;
         }
 
-        /**
-         * Notice show
-         */
-        add_action( 'admin_notices',  array($this, 'all_notice') );
     }
 
     /**
@@ -1034,20 +1045,13 @@ class WC_Webmoney extends WC_Payment_Gateway
     /**
      * Display the all notice
      **/
-    public function all_notice()
+    public function test_notice()
     {
-        /**
-         * Test mode on
-         */
-        if ( '' !== $this->test)
-        {
-            ?>
-            <div class="update-nag">
-                <?php
-                $link = '<a href="'. admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_webmoney') .'">'.__('here', 'wc-webmoney').'</a>';
-                echo sprintf( __( 'Webmoney test mode is enabled. Click %s -  to disable it when you want to start accepting live payment on your site.', 'wc-webmoney' ), $link ) ?>
-            </div>
-            <?php
-        }
+        ?>
+        <div class="update-nag">
+            <?php $link = '<a href="'. admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_webmoney') .'">'.__('here', 'wc-webmoney').'</a>';
+            echo sprintf( __( 'Webmoney test mode is enabled. Click %s -  to disable it when you want to start accepting live payment on your site.', 'wc-webmoney' ), $link ) ?>
+        </div>
+        <?php
     }
 }
