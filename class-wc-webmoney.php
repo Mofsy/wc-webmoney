@@ -109,8 +109,8 @@ class WC_Webmoney extends WC_Payment_Gateway
         $wp_dir = wp_upload_dir();
         $this->logger_path = array
         (
-            'path' => $wp_dir['basedir'],
-            'url' => $wp_dir['baseurl']
+            'path' => $wp_dir['basedir'] . '/wc-webmoney.txt',
+            'url' => $wp_dir['baseurl'] . '/wc-webmoney.txt'
         );
 
         $this->logger = new WC_Webmoney_Logger($this->logger_path['dir'], $this->get_option('logger'));
