@@ -36,6 +36,13 @@ function woocommerce_webmoney_init()
     }
 
     /**
+     * Wc_Webmoney_Logger class load
+     *
+     * @sience 0.4.0.1
+     */
+    include_once dirname(__FILE__) . '/class-wc-webmoney-logger.php';
+
+    /**
      * Define plugin url
      */
     define('WC_WEBMONEY_URL', plugin_dir_url(__FILE__));
