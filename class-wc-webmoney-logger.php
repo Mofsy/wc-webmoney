@@ -162,7 +162,7 @@ class WC_Webmoney_Logger
 
         if(is_object($object))
         {
-            $content[print_r($object, true) . PHP_EOL];
+            $content[print_r($object, true)];
         }
 
         /**
@@ -173,7 +173,7 @@ class WC_Webmoney_Logger
         file_put_contents
         (
             $this->path,
-            $content,
+            $content . PHP_EOL,
             FILE_APPEND | LOCK_EX
         );
 
