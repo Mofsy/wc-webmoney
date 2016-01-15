@@ -147,7 +147,7 @@ class WC_Webmoney_Logger
         /**
          * Check level
          */
-        if($this->level < $level)
+        if($this->level > $level)
         {
             return false;
         }
