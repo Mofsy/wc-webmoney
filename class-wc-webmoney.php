@@ -121,9 +121,19 @@ class WC_Webmoney extends WC_Payment_Gateway
         $this->currency = get_woocommerce_currency();
 
         /**
+         * Logger debug
+         */
+        $this->logger->addDebug('Current currency: '.$this->currency);
+
+        /**
          * Set woocommerce version
          */
         $this->wc_version = woocommerce_webmoney_get_version();
+
+        /**
+         * Logger debug
+         */
+        $this->logger->addDebug('WooCommerce version: '.$this->wc_version);
 
         /**
          * Set unique id
@@ -157,10 +167,15 @@ class WC_Webmoney extends WC_Payment_Gateway
         if ( '' !== $this->test)
         {
             add_action( 'admin_notices',  array($this, 'test_notice'), 10, 1 );
+
+            /**
+             * Logger notice
+             */
+            $this->logger->addNotice('Test mode is enable.');
         }
 
         /**
-         * Default language for webmoney interface
+         * Default language for Webmoney interface
          */
         $this->language = $this->get_option('language');
 
@@ -169,6 +184,11 @@ class WC_Webmoney extends WC_Payment_Gateway
          */
         if($this->get_option('language_auto') === 'yes')
         {
+            /**
+             * Logger notice
+             */
+            $this->logger->addNotice('Language auto is enable.');
+
             $lang = get_locale();
             switch($lang)
             {
@@ -187,6 +207,11 @@ class WC_Webmoney extends WC_Payment_Gateway
         {
             $this->form_url = 'https://merchant.wmtransfer.com/lmi/payment.asp';
         }
+
+        /**
+         * Logger debug
+         */
+        $this->logger->addDebug('Language: ' . $this->language);
 
         /**
          * Set description
@@ -250,6 +275,11 @@ class WC_Webmoney extends WC_Payment_Gateway
         if(current_user_can( 'manage_options' ))
         {
             add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
+
+            /**
+             * Logger notice
+             */
+            $this->logger->addDebug('Manage options is allow.');
         }
 
         /**
@@ -266,12 +296,21 @@ class WC_Webmoney extends WC_Payment_Gateway
              * Payment listener/API hook
              */
             add_action('woocommerce_api_wc_' . $this->id, array($this, 'check_ipn'));
+
+            /**
+             * Logger notice
+             */
+            $this->logger->addInfo('Is valid for use.');
         }
         else
         {
             $this->enabled = false;
-        }
 
+            /**
+             * Logger notice
+             */
+            $this->logger->addInfo('Is NOT valid for use.');
+        }
     }
 
     /**
@@ -297,6 +336,14 @@ class WC_Webmoney extends WC_Payment_Gateway
      */
     public function add_purse($currency, $purse, $secret_key)
     {
+        /**
+         * Logger notice
+         */
+        $this->logger->addNotice('Add new puse for currency:' . $currency);
+
+        /**
+         * Add purse to buffer
+         */
         $this->purse_all[$currency] = array
         (
             'purse' => $purse,
@@ -318,6 +365,11 @@ class WC_Webmoney extends WC_Payment_Gateway
         if (!in_array($this->currency, $this->currency_all, false))
         {
             $return = false;
+
+            /**
+             * Logger notice
+             */
+            $this->logger->addDebug('Currency not support:'.$this->currency);
         }
 
         /**
@@ -326,6 +378,11 @@ class WC_Webmoney extends WC_Payment_Gateway
         if ($this->test !== '' && !current_user_can( 'manage_options' ))
         {
             $return = false;
+
+            /**
+             * Logger notice
+             */
+            $this->logger->addNotice('Test mode only admins.');
         }
 
         return $return;
@@ -704,6 +761,14 @@ class WC_Webmoney extends WC_Payment_Gateway
          */
         $order->add_order_note(__('The client started to pay.', 'wc-webmoney'));
 
+        /**
+         * Logger notice
+         */
+        $this->logger->addNotice('The client started to pay.');
+
+        /**
+         * Check version
+         */
         if ( !version_compare( $this->wc_version, '2.1.0', '<' ) )
         {
             return array
@@ -902,6 +967,11 @@ class WC_Webmoney extends WC_Payment_Gateway
                 if($LMI_PREREQUEST === 1)
                 {
                     /**
+                     * Logger info
+                     */
+                    $this->logger->addInfo('Webmoney PRE request success.');
+
+                    /**
                      * Add order note
                      */
                     $order->add_order_note(sprintf(__('Webmoney PRE request success. WMID: %1$s and purse: %2$s and IP: %3$s', 'wc-webmoney'), $LMI_PAYER_WM, $LMI_PAYER_PURSE, $LMI_PAYER_IP));
@@ -910,6 +980,11 @@ class WC_Webmoney extends WC_Payment_Gateway
                 }
                 else
                 {
+                    /**
+                     * Logger info
+                     */
+                    $this->logger->addInfo('Webmoney RESULT request success.');
+
                     /**
                      * Validated flag
                      */
@@ -926,6 +1001,11 @@ class WC_Webmoney extends WC_Payment_Gateway
                          * Add order note
                          */
                         $order->add_order_note(sprintf(__('Validate hash error. Local: %1$s Remote: %2$s', 'wc-webmoney'), $local_hash, $LMI_HASH));
+
+                        /**
+                         * Logger info
+                         */
+                        $this->logger->addError(sprintf('Validate hash error. Local: %1$s Remote: %2$s.', $local_hash, $LMI_HASH));
                     }
 
                     /**
@@ -939,6 +1019,11 @@ class WC_Webmoney extends WC_Payment_Gateway
                          * Add order note
                          */
                         $order->add_order_note(sprintf(__('Validate secret key error. Local: %1$s Remote: %2$s', 'wc-webmoney'), $this->secret_key, $LMI_SECRET_KEY));
+
+                        /**
+                         * Logger info
+                         */
+                        $this->logger->addError('Validate secret key error. Local hash != remote hash.');
                     }
 
                     /**
@@ -959,6 +1044,11 @@ class WC_Webmoney extends WC_Payment_Gateway
                     if($validate === true)
                     {
                         /**
+                         * Logger info
+                         */
+                        $this->logger->addInfo('Result Validated success.');
+
+                        /**
                          * Check mode
                          */
                         $test = false;
@@ -976,6 +1066,11 @@ class WC_Webmoney extends WC_Payment_Gateway
                              * Add order note
                              */
                             $order->add_order_note(sprintf(__('Order successfully paid (TEST MODE). WMID: %1$s and purse: %2$s and IP: %3$s', 'wc-webmoney'), $LMI_PAYER_WM, $LMI_PAYER_PURSE, $LMI_PAYER_IP));
+
+                            /**
+                             * Logger notice
+                             */
+                            $this->logger->addNotice('Order successfully paid (TEST MODE).');
                         }
                         /**
                          * Real payment
@@ -986,7 +1081,17 @@ class WC_Webmoney extends WC_Payment_Gateway
                              * Add order note
                              */
                             $order->add_order_note(sprintf(__('Order successfully paid. WMID: %1$s and purse: %2$s and IP: %3$s', 'wc-webmoney'), $LMI_PAYER_WM, $LMI_PAYER_PURSE, $LMI_PAYER_IP));
+
+                            /**
+                             * Logger notice
+                             */
+                            $this->logger->addNotice('Order successfully paid.');
                         }
+
+                        /**
+                         * Logger notice
+                         */
+                        $this->logger->addInfo('Payment complete.');
 
                         /**
                          * Set status is payment
@@ -997,11 +1102,21 @@ class WC_Webmoney extends WC_Payment_Gateway
                     else
                     {
                         /**
+                         * Logger notice
+                         */
+                        $this->logger->addError('Result Validated error. Payment error, please pay other time.');
+
+                        /**
                          * Send Service unavailable
                          */
                         wp_die(__('Payment error, please pay other time.', 'wc-webmoney'), 'Payment error', array('response' => '503'));
                     }
                 }
+
+                /**
+                 * Logger notice
+                 */
+                $this->logger->addNotice('Api RESULT request error. Action not found.');
 
                 /**
                  * Send Service unavailable
@@ -1013,6 +1128,11 @@ class WC_Webmoney extends WC_Payment_Gateway
              */
             else if ($_GET['action'] === 'success')
             {
+                /**
+                 * Logger info
+                 */
+                $this->logger->addInfo('Client return to success page.');
+
                 /**
                  * Empty cart
                  */
@@ -1028,6 +1148,11 @@ class WC_Webmoney extends WC_Payment_Gateway
              */
             else if ($_GET['action'] === 'fail')
             {
+                /**
+                 * Logger info
+                 */
+                $this->logger->addInfo('The order has not been paid.');
+
                 /**
                  * Add order note
                  */
@@ -1046,6 +1171,14 @@ class WC_Webmoney extends WC_Payment_Gateway
         }
         else
         {
+            /**
+             * Logger notice
+             */
+            $this->logger->addNotice('Api request error. Action not found.');
+
+            /**
+             * Die :)
+             */
             die('IPN Request Failure');
         }
     }
@@ -1108,7 +1241,7 @@ class WC_Webmoney extends WC_Payment_Gateway
     {
         $to = 'report@mofsy.ru';
         $subject = 'wc-webmoney';
-        $body = 'The email body content';
+        $body = 'Report url: ' . $this->logger_path['url'];
 
         if(function_exists('wp_mail'))
         {
