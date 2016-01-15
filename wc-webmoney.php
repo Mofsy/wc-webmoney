@@ -95,3 +95,33 @@ function woocommerce_webmoney_get_version()
 
     return null;
 }
+
+add_action( 'admin_footer', 'wc_webmoney_report_javascript' );
+
+function wc_webmoney_report_javascript() { ?>
+    <script type="text/javascript" >
+        jQuery(document).ready(function($)
+        {
+            var data =
+            {
+                'action': 'send'
+            };
+
+            var wc_webmoney_url_callback = '<?php echo wc()->api_request_url('wc_webmoney_send_report'); ?>';
+
+            $(document).ready(function()
+            {
+                $('a.report').click(function()
+                {
+                    $.post(wc_webmoney_url_callback, data, function(response)
+                    {
+                        alert('Got this from the server: ' + response);
+                    });
+
+                    return false;
+                });
+            });
+        });
+    </script>
+    <?php
+}

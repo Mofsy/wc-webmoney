@@ -313,6 +313,11 @@ class WC_Webmoney extends WC_Payment_Gateway
         add_action('woocommerce_api_wc_' . $this->id, array($this, 'check_ipn'));
 
         /**
+         * Send report API hook
+         */
+        add_action('woocommerce_api_wc_' . $this->id . '_send_report', array($this, 'send_report_callback'));
+
+        /**
          * Gate allow?
          */
         if ($this->is_valid_for_use())
@@ -979,6 +984,22 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
             $order = wc_get_order($LMI_PAYMENT_NO);
 
             /**
+             * Order not found
+             */
+            if($order === false)
+            {
+                /**
+                 * Logger notice
+                 */
+                $this->logger->addNotice('Api RESULT request error. Order not found.');
+
+                /**
+                 * Send Service unavailable
+                 */
+                wp_die(__('Order not found.', 'wc-webmoney'), 'Payment error', array('response' => '503'));
+            }
+
+            /**
              * Result
              */
             if ($_GET['action'] === 'result')
@@ -1260,7 +1281,7 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
      *
      * @return bool
      */
-    public function send_report()
+    public function send_report_callback()
     {
         $to = 'report@mofsy.ru';
         $subject = 'wc-webmoney';
@@ -1269,10 +1290,8 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
         if(function_exists('wp_mail'))
         {
             wp_mail( $to, $subject, $body );
-
-            return true;
+            die('ok');
         }
-
-        return false;
+        die('error');
     }
 }
