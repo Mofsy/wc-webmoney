@@ -1045,7 +1045,7 @@ class WC_Webmoney extends WC_Payment_Gateway
             <div class="update-nag">
                 <?php
                 $link = '<a href="'. admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_webmoney') .'">'.__('here', 'wc-webmoney').'</a>';
-                echo sprintf( __( 'Webmoney test mode is enabled. Click %s -  to disable it when you want to start accepting live payment on your site.', 'woocommerce' ), $link ) ?>
+                echo sprintf( __( 'Webmoney test mode is enabled. Click %s -  to disable it when you want to start accepting live payment on your site.', 'wc-webmoney' ), $link ) ?>
             </div>
             <?php
         }
