@@ -109,24 +109,21 @@ function wc_webmoney_report_javascript() { ?>
 
             var wc_webmoney_url_callback = '<?php echo wc()->api_request_url('wc_webmoney_send_report'); ?>';
 
-            $(document).ready(function()
+            $('.report a').click(function()
             {
-                $('.report a').click(function()
+                $.post(wc_webmoney_url_callback, data, function(response)
                 {
-                    $.post(wc_webmoney_url_callback, data, function(response)
+                    if(response == 'ok')
                     {
-                        if(response == 'ok')
-                        {
-                            $('.report').html('<?php _e('Report is sended! Thank you.', 'wc-webmoney'); ?>');
-                        }
-                        else
-                        {
-                            $('.report').html('<?php _e('Report is NOT sended! Please reload page and resend.', 'wc-webmoney'); ?>');
-                        }
-                    });
-
-                    return false;
+                        $('.report').html('<?php _e('Report is sended! Thank you.', 'wc-webmoney'); ?>');
+                    }
+                    else
+                    {
+                        $('.report').html('<?php _e('Report is NOT sended! Please reload page and resend.', 'wc-webmoney'); ?>');
+                    }
                 });
+
+                return false;
             });
         });
     </script>
