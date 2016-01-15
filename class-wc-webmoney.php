@@ -294,22 +294,21 @@ class WC_Webmoney extends WC_Payment_Gateway
              */
             $this->logger->addDebug('Manage options is allow.');
         }
+        /**
+         * Receipt page
+         */
+        add_action('woocommerce_receipt_' . $this->id, array($this, 'receipt_page'));
+
+        /**
+         * Payment listener/API hook
+         */
+        add_action('woocommerce_api_wc_' . $this->id, array($this, 'check_ipn'));
 
         /**
          * Gate allow?
          */
         if ($this->is_valid_for_use())
         {
-            /**
-             * Receipt page
-             */
-            add_action('woocommerce_receipt_' . $this->id, array($this, 'receipt_page'));
-
-            /**
-             * Payment listener/API hook
-             */
-            add_action('woocommerce_api_wc_' . $this->id, array($this, 'check_ipn'));
-
             /**
              * Logger notice
              */

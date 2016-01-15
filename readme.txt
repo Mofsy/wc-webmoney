@@ -77,6 +77,7 @@ New settings save
 = 0.4.0.1 =
 * Add notices
 * Add debug tool (logging and send to author)
+* Fix action error is TEST mode
 * Minor fixes
 
 = 0.3.0.5 =
