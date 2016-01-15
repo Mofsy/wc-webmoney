@@ -359,23 +359,42 @@ class WC_Webmoney extends WC_Payment_Gateway
      * @param $currency
      * @param $purse
      * @param $secret_key
+     *
+     * @return bool
      */
     public function add_purse($currency, $purse, $secret_key)
     {
         /**
-         * Logger notice
+         * Validate purse
          */
-        $this->logger->addNotice('Add new purse for currency: ' . $currency);
+        if(!preg_match('#^[ZREU][0-9]{12}$#i', trim($purse)))
+        {
+            /**
+             * Logger notice
+             */
+            $this->logger->addError('Add new purse for currency: ' . $currency . ' error. Purse not valid.');
 
-        /**
-         * Add purse to buffer
-         */
-        $this->purse_all[$currency] = array
-        (
-            'purse' => $purse,
+            return false;
+        }
+        else
+        {
+            /**
+             * Logger notice
+             */
+            $this->logger->addNotice('Add new purse for currency: ' . $currency);
 
-            'secret_key' => $secret_key
-        );
+            /**
+             * Add purse to buffer
+             */
+            $this->purse_all[$currency] = array
+            (
+                'purse' => $purse,
+
+                'secret_key' => $secret_key
+            );
+
+            return true;
+        }
     }
 
     /**
