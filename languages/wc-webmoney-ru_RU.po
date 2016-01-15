@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce - Webmoney Payment Gateway\n"
-"POT-Creation-Date: 2016-01-15 23:17+0300\n"
-"PO-Revision-Date: 2016-01-15 23:19+0300\n"
+"POT-Creation-Date: 2016-01-15 23:24+0300\n"
+"PO-Revision-Date: 2016-01-15 23:24+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language: ru_RU\n"
@@ -363,6 +363,15 @@ msgstr ""
 #, php-format
 msgid "Webmoney debug tool is enabled. Click %s -  to disable."
 msgstr "Отлов ошибок Webmoney включен. Кликните %s -  для выключения."
+
+#: wc-webmoney.php:120
+msgid "Report is sended! Thank you."
+msgstr "Отчет отправлен! Спасибо."
+
+#: wc-webmoney.php:124
+msgid "Report is NOT sended! Please reload page and resend."
+msgstr ""
+"Отчет не отправлен! Пожалуйста перезагрузите страницу  отправьте заново."
 
 #. Plugin Name of the plugin/theme
 msgid "WooCommerce - Webmoney Payment Gateway"

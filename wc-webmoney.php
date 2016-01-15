@@ -117,11 +117,11 @@ function wc_webmoney_report_javascript() { ?>
                     {
                         if(response == 'ok')
                         {
-                            $('.report').html('оке');
+                            $('.report').html('<?php _e('Report is sended! Thank you.', 'wc-webmoney'); ?>');
                         }
                         else
                         {
-                            $('.report').html('ошибка');
+                            $('.report').html('<?php _e('Report is NOT sended! Please reload page and resend.', 'wc-webmoney'); ?>');
                         }
                     });
 
