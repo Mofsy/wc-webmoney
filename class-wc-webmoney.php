@@ -116,6 +116,14 @@ class WC_Webmoney extends WC_Payment_Gateway
         $this->logger = new WC_Webmoney_Logger($this->logger_path['dir'], $this->get_option('logger'));
 
         /**
+         * Debug tool notice
+         */
+        if($this->get_option('logger') !== '' && $this->get_option('logger') < 400)
+        {
+            add_action( 'admin_notices',  array($this, 'debug_notice'), 10, 1 );
+        }
+
+        /**
          * Get currency
          */
         $this->currency = get_woocommerce_currency();
@@ -1232,7 +1240,7 @@ class WC_Webmoney extends WC_Payment_Gateway
     }
 
     /**
-     * Display the all notice
+     * Display the test notice
      **/
     public function test_notice()
     {
@@ -1240,6 +1248,19 @@ class WC_Webmoney extends WC_Payment_Gateway
         <div class="update-nag">
             <?php $link = '<a href="'. admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_webmoney') .'">'.__('here', 'wc-webmoney').'</a>';
             echo sprintf( __( 'Webmoney test mode is enabled. Click %s -  to disable it when you want to start accepting live payment on your site.', 'wc-webmoney' ), $link ) ?>
+        </div>
+        <?php
+    }
+
+    /**
+     * Display the debug notice
+     **/
+    public function debug_notice()
+    {
+        ?>
+        <div class="update-nag">
+            <?php $link = '<a href="'. admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_webmoney') .'">'.__('here', 'wc-webmoney').'</a>';
+            echo sprintf( __( 'Webmoney debug tool is enabled. Click %s -  to disable.', 'wc-webmoney' ), $link ) ?>
         </div>
         <?php
     }
