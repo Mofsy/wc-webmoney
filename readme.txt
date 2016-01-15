@@ -73,6 +73,12 @@ New settings save
 Просто пере-сохраните настройки
 
 == Changelog ==
+
+= 0.4.0.1 =
+* Add notices
+* Add debug tool (logging and send to author)
+* Minor fixes
+
 = 0.3.0.5 =
 * Fix version
 * Fix readme
