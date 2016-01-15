@@ -21,6 +21,13 @@ class WC_Webmoney_Logger
     public $path;
 
     /**
+     * Default level
+     *
+     * @var int
+     */
+    public $level = 400;
+
+    /**
      * Datetime
      */
     public $dt;
@@ -46,11 +53,17 @@ class WC_Webmoney_Logger
      * Logger constructor.
      *
      * @param $path
+     * @param $level
      */
-    public function __construct($path)
+    public function __construct($path, $level)
     {
         $this->path = $path;
         $this->dt = new DateTime('now', new DateTimeZone( 'UTC' ));
+
+        if($level !== '')
+        {
+            $this->level = $level;
+        }
     }
 
     /**
@@ -126,18 +139,32 @@ class WC_Webmoney_Logger
      * @param $level
      * @param $message
      * @param null $object
+     *
+     * @return bool
      */
     public function add($level, $message, $object = null)
     {
+        /**
+         * Check level
+         */
+        if($this->level < $level)
+        {
+            return false;
+        }
+
+        /**
+         * Content
+         */
         $content = implode
         (' -|- ',
-            [
+            array
+            (
                 $level,
                 $this->levels[$level],
                 $this->dt->format(DATE_ATOM),
                 $message,
                 print_r($object, true) . PHP_EOL
-            ]
+            )
         );
 
         file_put_contents
@@ -146,5 +173,7 @@ class WC_Webmoney_Logger
             $content,
             FILE_APPEND | LOCK_EX
         );
+
+        return true;
     }
 }

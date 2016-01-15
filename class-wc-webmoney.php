@@ -86,10 +86,35 @@ class WC_Webmoney extends WC_Payment_Gateway
     public $logger;
 
     /**
+     * Logger path
+     *
+     * array
+     * (
+     *  'dir' => 'C:\path\to\wordpress\wp-content\uploads\logname.log',
+     *  'url' => 'http://example.com/wp-content/uploads/logname.log'
+     * )
+     *
+     * @var array
+     */
+    public $logger_path;
+
+    /**
      * WC_Webmoney constructor
      */
     public function __construct()
     {
+        /**
+         * Logger?
+         */
+        $wp_dir = wp_upload_dir();
+        $this->logger_path = array
+        (
+            'path' => $wp_dir['basedir'],
+            'url' => $wp_dir['baseurl']
+        );
+
+        $this->logger = new WC_Webmoney_Logger($this->logger_path['dir'], $this->get_option('logger'));
+
         /**
          * Get currency
          */
@@ -490,6 +515,25 @@ class WC_Webmoney extends WC_Payment_Gateway
                     '1' => __( 'All test payments will fail', 'wc-webmoney' ),
                     '2' => __( '80%% of test payments will be successful, 20%% of test payments will fail', 'wc-webmoney' ),
                 )
+            ),
+            'logger' => array
+            (
+                'title' => __( 'Enable logging?', 'wc-webmoney' ),
+                'type'        => 'select',
+                'description'	=>  __( 'The field is used only in the test mode.', 'wc-webmoney' ),
+                'default'	=> '400',
+                'options'     => array
+                (
+                    '' => __( 'Off', 'wc-webmoney' ),
+                    '100' => 'DEBUG',
+                    '200' => 'INFO',
+                    '250' => 'NOTICE',
+                    '300' => 'WARNING',
+                    '400' => 'ERROR',
+                    '500' => 'CRITICAL',
+                    '550' => 'ALERT',
+                    '600' => 'EMERGENCY'
+                 )
             )
         );
     }
@@ -1053,5 +1097,26 @@ class WC_Webmoney extends WC_Payment_Gateway
             echo sprintf( __( 'Webmoney test mode is enabled. Click %s -  to disable it when you want to start accepting live payment on your site.', 'wc-webmoney' ), $link ) ?>
         </div>
         <?php
+    }
+
+    /**
+     * Send report to author
+     *
+     * @return bool
+     */
+    public function send_report()
+    {
+        $to = 'report@mofsy.ru';
+        $subject = 'wc-webmoney';
+        $body = 'The email body content';
+
+        if(function_exists('wp_mail'))
+        {
+            wp_mail( $to, $subject, $body );
+
+            return true;
+        }
+
+        return false;
     }
 }
