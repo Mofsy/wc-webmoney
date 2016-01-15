@@ -331,6 +331,7 @@ class WC_Webmoney extends WC_Payment_Gateway
              */
             $this->logger->addInfo('Is NOT valid for use.');
         }
+
     }
 
     /**
@@ -597,7 +598,8 @@ class WC_Webmoney extends WC_Payment_Gateway
             (
                 'title' => __( 'Enable logging?', 'wc-webmoney' ),
                 'type'        => 'select',
-                'description'	=>  __( 'The field is used only in the test mode.', 'wc-webmoney' ),
+                'description'	=>  __( 'You can enable gateway logging, specify the level of error that you want to benefit from logging. You can send reports to developer manually by pressing the button. All sensitive data in the report are deleted.
+By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
                 'default'	=> '400',
                 'options'     => array
                 (
@@ -1045,18 +1047,6 @@ class WC_Webmoney extends WC_Payment_Gateway
                          */
                         $this->logger->addError('Validate secret key error. Local hash != remote hash.');
                     }
-
-                    /**
-                     * Check sum
-                     */
-                    //todo: implements
-
-
-                    /**
-                     * Check purse
-                     */
-                    //todo:implements
-
 
                     /**
                      * Validated
