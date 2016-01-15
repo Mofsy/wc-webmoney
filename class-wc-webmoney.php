@@ -367,7 +367,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Validate purse
          */
-        if(!preg_match('#^[ZREU][0-9]{12}$#i', trim($purse)))
+        if(!$this->validate_purse($purse))
         {
             /**
              * Logger notice
@@ -395,6 +395,23 @@ class WC_Webmoney extends WC_Payment_Gateway
 
             return true;
         }
+    }
+
+    /**
+     * Validate purse
+     *
+     * @param $purse
+     *
+     * @return bool
+     */
+    public function validate_purse($purse)
+    {
+        if(!preg_match('#^[ZREU][0-9]{12}$#i', trim($purse)))
+        {
+            return false;
+        }
+
+        return true;
     }
 
     /**
