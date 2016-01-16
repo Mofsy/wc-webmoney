@@ -15,25 +15,25 @@ Donate link: https://mofsy.ru/about/help
 Allows you to use Webmoney payment gateway with the WooCommerce plugin.
 This is the best payment gateway plugin for Webmoney, because it is the most integrated with Webmoney Merchant capabilities and is available for most versions WooCommerce and Wordpress.
 
-Error found? [bug report](https://mofsy.ru/contacts/email)
+Support purses: **WMR**, **WMZ**, **WME**, **WMU**
 
-Localization support:
-<ul style="list-style:none;">
-<li>English</li>
-<li>Russian</li>
-</ul>
+Found a bug? Send it with the page in the plugin settings one click :)
 
 = Russian =
 Позволяет использовать платежный шлюз Webmoney с плагином WooCommerce.
 Это самый лучший плагин платежного шлюза для Webmoney, т.к. он максимально интегрирован с возможностями Webmoney Merchant и доступен под большинство версий WooCommerce и Wordpress.
 
-Нашли ошибку? [напишите об этом](https://mofsy.ru/contacts/email)
+Поддерживаемые кошельки: **WMR**, **WMZ**, **WME**, **WMU**
 
-Поддерживаемые языки:
-<ul style="list-style:none;">
-<li>Английский</li>
-<li>Русский</li>
-</ul>
+Нашли ошибку? Отправьте её со страницы настроек в плагине одник кликом :)
+
+== Translations ==
+
+* English - default, always included
+* Russian - always included
+
+*Note:* All my plugins are localized/ translateable by default. This is very important for all users worldwide.
+So please contribute your language to the plugin to make it even more useful. For translating I recommend the awesome for validating the ["Poedit Editor"](http://www.poedit.net/).
 
 == Installation ==
 = English =
@@ -68,11 +68,8 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 
 
 == Upgrade Notice ==
-= English =
+= 0.4.1.1 =
 New settings save
-
-= Russian =
-Просто пере-сохраните настройки
 
 == Changelog ==
 
