@@ -44,6 +44,7 @@ Localization support:
 For https://merchant.wmtransfer.com/conf/purses.asp settings:
 <ul style="list-style:none;">
 <li>Result URL: http://your_domain/?wc-api=wc_webmoney&action=result</li>
+<li>Send parameters in the preliminary inquiry: Yes, security is good.</li>
 <li>Success URL: http://your_domain/?wc-api=wc_webmoney&action=success</li>
 <li>Fail URL: http://your_domain/?wc-api=wc_webmoney&action=fail</li>
 <li>Request method for all: POST</li>
@@ -58,6 +59,7 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 Настройки для https://merchant.webmoney.ru/conf/purses.asp :
 <ul style="list-style:none;">
 <li>Result URL: http://your_domain/?wc-api=wc_webmoney&action=result</li>
+<li>Передавать параметры в предварительном запросе: Да, для безопасности хорошо.</li>
 <li>Success URL: http://your_domain/?wc-api=wc_webmoney&action=success</li>
 <li>Fail URL: http://your_domain/?wc-api=wc_webmoney&action=fail</li>
 <li>Метод запросов: POST</li>
@@ -73,6 +75,10 @@ New settings save
 Просто пере-сохраните настройки
 
 == Changelog ==
+
+= 0.4.1.1 =
+* Fix readme
+* Fix PRE request
 
 = 0.4.0.1 =
 * Add notices
