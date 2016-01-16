@@ -1333,4 +1333,12 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
         }
         die('error');
     }
+
+    /**
+     * Destructor
+     */
+    public function __destruct()
+    {
+       $this->logger->addEmergency(PHP_EOL);
+    }
 }
