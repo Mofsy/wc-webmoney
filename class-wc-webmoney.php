@@ -864,6 +864,11 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
     public function check_ipn()
     {
         /**
+         * Insert $_REQUEST into debug mode
+         */
+        $this->logger->addDebug(print_r($_REQUEST,true));
+
+        /**
          * Hook wc_webmoney
          */
         if ($_GET['wc-api'] === 'wc_webmoney')
