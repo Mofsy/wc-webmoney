@@ -73,6 +73,9 @@ New settings save
 
 == Changelog ==
 
+= 0.4.1.2 =
+* Fix readme
+
 = 0.4.1.1 =
 * Fix readme
 * Fix PRE request
