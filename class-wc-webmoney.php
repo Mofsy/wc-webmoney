@@ -1028,7 +1028,7 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
             /**
              * Order not found
              */
-            if($order === false && $_GET['action'] !== '')
+            if($order === false && array_key_exists('action', $_GET) && $_GET['action'] !== '')
             {
                 /**
                  * Logger notice

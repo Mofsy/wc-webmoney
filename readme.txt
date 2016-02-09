@@ -73,6 +73,9 @@ New settings save
 
 == Changelog ==
 
+= 0.4.3.1 =
+* Fix check result #2
+
 = 0.4.2.1 =
 * Fix check result
 
