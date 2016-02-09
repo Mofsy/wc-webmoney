@@ -1028,7 +1028,7 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
             /**
              * Order not found
              */
-            if($order === false)
+            if($order === false && $_GET['action'] !== '')
             {
                 /**
                  * Logger notice
@@ -1254,7 +1254,7 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
             /**
              * Die :)
              */
-            die('IPN Request Failure');
+            wp_die(__('IPN Request Failure.', 'wc-webmoney'), 'Result success', array('response' => '200'));
         }
     }
 
