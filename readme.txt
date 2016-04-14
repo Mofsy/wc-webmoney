@@ -2,7 +2,7 @@
 Contributors: Mofsy
 Tags: webmoney, payment gateway, woo commerce, woocommerce, ecommerce, gateway, woo webmoney, wmtransfer, merchant, woo
 Requires at least: 3.0
-Tested up to: 4.4.1
+Tested up to: 4.5
 Stable tag: trunk
 WC requires at least: 2.2
 WC tested up to: 2.5
@@ -72,6 +72,10 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 New settings save
 
 == Changelog ==
+
+= 0.5.0.1 =
+* Add WPML support
+* Test on WP 4.5
 
 = 0.4.3.1 =
 * Fix check result #2
