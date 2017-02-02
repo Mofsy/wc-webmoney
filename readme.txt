@@ -2,10 +2,10 @@
 Contributors: Mofsy
 Tags: webmoney, payment gateway, woo commerce, woocommerce, ecommerce, gateway, woo webmoney, wmtransfer, merchant, woo
 Requires at least: 3.0
-Tested up to: 4.5
+Tested up to: 4.7
 Stable tag: trunk
 WC requires at least: 2.2
-WC tested up to: 2.5
+WC tested up to: 2.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://mofsy.ru/about/help
@@ -66,12 +66,11 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 <li>Метод формирования контрольной подписи: sha256</li>
 </ul>
 
-
-== Upgrade Notice ==
-= 0.4.1.1 =
-New settings save
-
 == Changelog ==
+
+= 0.6.0.1 =
+* Test mode fix
+* Test on WP 4.7
 
 = 0.5.0.1 =
 * Add WPML support
