@@ -185,7 +185,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Test mode notice show
          */
-        if ( '' !== $this->test)
+        if ('yes' === $this->test)
         {
             add_action( 'admin_notices',  array($this, 'test_notice'), 10, 1 );
 
@@ -437,7 +437,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Check test mode and admin rights
          */
-        if ($this->test !== '' && !current_user_can( 'manage_options' ))
+        if ($this->test === 'yes' && !current_user_can( 'manage_options' ))
         {
             $return = false;
 
