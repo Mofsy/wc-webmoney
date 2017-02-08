@@ -68,6 +68,9 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 
 == Changelog ==
 
+= 0.6.1.1 =
+* Minor fix
+
 = 0.6.0.1 =
 * Test mode fix
 * Test on WP 4.7

@@ -185,7 +185,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Test mode notice show
          */
-        if ('yes' === $this->test)
+        if ('' !== $this->test)
         {
             add_action( 'admin_notices',  array($this, 'test_notice'), 10, 1 );
 
@@ -437,7 +437,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Check test mode and admin rights
          */
-        if ($this->test === 'yes' && !current_user_can( 'manage_options' ))
+        if ($this->test !== '' && !current_user_can( 'manage_options' ))
         {
             $return = false;
 
@@ -1038,7 +1038,7 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
                 /**
                  * Send Service unavailable
                  */
-                wp_die(__('Order not found.', 'wc-webmoney'), 'Payment error', array('response' => '503'));
+                wp_die(__('Order not found.', 'wc-webmoney'), 'Payment error', array('response' => '200'));
             }
 
             /**
