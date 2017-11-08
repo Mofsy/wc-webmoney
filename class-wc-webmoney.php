@@ -732,10 +732,28 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
         {
             $description .= $item['name'];
         }
-        if(count($description) > 200)
+
+	    /**
+	     * Description count
+	     */
+        if(function_exists('mb_strlen'))
+        {
+            $description_count = mb_strlen($description);
+        }
+        elseif (function_exists('iconv_strlen'))
+        {
+	        $description_count = iconv_strlen($description);
+        }
+        else
+        {
+	        $description_count = strlen($description);
+        }
+
+        if($description_count > 200)
         {
             $description = __('Product number: ' . $order_id, 'wc-webmoney');
         }
+
         $args['LMI_PAYMENT_DESC'] = $description;
         $args['LMI_PAYMENT_DESC_BASE64'] = base64_encode($description);
 
