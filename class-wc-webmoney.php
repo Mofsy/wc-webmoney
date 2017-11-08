@@ -458,7 +458,6 @@ class WC_Webmoney extends WC_Payment_Gateway
         ?>
         <h1><?php _e('Webmoney', 'wc-webmoney'); ?></h1><?php $this->get_icon(); ?>
         <p><?php _e('Setting receiving payments through Webmoney Merchant. If the gateway is not working, you can turn error level DEBUG and send the report to the developer. Developer looks for errors and corrected.', 'wc-webmoney'); ?></p>
-        <div class="webmoney-report"><a style="color: red;" href="<?php wc()->api_request_url('wc_webmoney_send_report'); ?>"><?php _e('Send report to author. Do not press if no errors! ', 'wc-webmoney'); ?></a> </div>
         <hr>
         <?php if ( $this->is_valid_for_use() ) : ?>
 
@@ -1336,24 +1335,5 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
             echo sprintf( __( 'Webmoney debug tool is enabled. Click %s -  to disable.', 'wc-webmoney' ), $link ) ?>
         </div>
         <?php
-    }
-
-    /**
-     * Send report to author
-     *
-     * @return bool
-     */
-    public function send_report_callback()
-    {
-        $to = 'report@mofsy.ru';
-        $subject = 'wc-webmoney';
-        $body = 'Report url: ' . $this->logger_path['url'];
-
-        if(function_exists('wp_mail'))
-        {
-            wp_mail( $to, $subject, $body );
-            die('ok');
-        }
-        die('error');
     }
 }

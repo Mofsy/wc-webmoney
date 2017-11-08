@@ -95,37 +95,3 @@ function woocommerce_webmoney_get_version()
 
     return null;
 }
-
-add_action( 'admin_footer', 'wc_webmoney_report_javascript' );
-
-function wc_webmoney_report_javascript() { ?>
-    <script type="text/javascript" >
-        jQuery(document).ready(function($)
-        {
-            var data =
-            {
-                'action': 'send'
-            };
-
-            var wc_webmoney_url_callback = '<?php echo wc()->api_request_url('wc_webmoney_send_report'); ?>';
-
-            $('.webmoney-report a').click(function()
-            {
-                $.post(wc_webmoney_url_callback, data, function(response)
-                {
-                    if(response == 'ok')
-                    {
-                        $('.webmoney-report').html('<?php _e('Report is sended! Thank you.', 'wc-webmoney'); ?>');
-                    }
-                    else
-                    {
-                        $('.webmoney-report').html('<?php _e('Report is NOT sended! Please reload page and resend.', 'wc-webmoney'); ?>');
-                    }
-                });
-
-                return false;
-            });
-        });
-    </script>
-    <?php
-}
