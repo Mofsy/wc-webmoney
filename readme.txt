@@ -11,21 +11,12 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://mofsy.ru/about/help
 
 == Description ==
-= English =
 Allows you to use Webmoney payment gateway with the WooCommerce plugin.
 This is the best payment gateway plugin for Webmoney, because it is the most integrated with Webmoney Merchant capabilities and is available for most versions WooCommerce and Wordpress.
 
 Support purses: **WMR**, **WMZ**, **WME**, **WMU**
 
 Found a bug? Send it with the page in the plugin settings one click :)
-
-= Russian =
-Позволяет использовать платежный шлюз Webmoney с плагином WooCommerce.
-Это самый лучший плагин платежного шлюза для Webmoney, т.к. он максимально интегрирован с возможностями Webmoney Merchant и доступен под большинство версий WooCommerce и Wordpress.
-
-Поддерживаемые кошельки: **WMR**, **WMZ**, **WME**, **WMU**
-
-Нашли ошибку? Отправьте её со страницы настроек в плагине одник кликом :)
 
 == Translations ==
 
@@ -36,8 +27,7 @@ Found a bug? Send it with the page in the plugin settings one click :)
 So please contribute your language to the plugin to make it even more useful. For translating I recommend the awesome for validating the ["Poedit Editor"](http://www.poedit.net/).
 
 == Installation ==
-= English =
-1. Archive extract and upload "wc-webmoney" to /wp-content/plugins
+1. Archive extract and upload folder "wc-webmoney" to /wp-content/plugins
 2. Activation plugin
 3. Setting
 
@@ -49,21 +39,6 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 <li>Fail URL: http://your_domain/?wc-api=wc_webmoney&action=fail</li>
 <li>Request method for all: POST</li>
 <li>Control sign forming method: sha256</li>
-</ul>
-
-= Russian =
-1. Распакуйте архив и загрузите "wc-webmoney" в папку /wp-content/plugins
-2. Активируйте плагин
-3. Настройте
-
-Настройки для https://merchant.webmoney.ru/conf/purses.asp :
-<ul style="list-style:none;">
-<li>Result URL: http://your_domain/?wc-api=wc_webmoney&action=result</li>
-<li>Передавать параметры в предварительном запросе: Да, для безопасности хорошо.</li>
-<li>Success URL: http://your_domain/?wc-api=wc_webmoney&action=success</li>
-<li>Fail URL: http://your_domain/?wc-api=wc_webmoney&action=fail</li>
-<li>Метод запросов: POST</li>
-<li>Метод формирования контрольной подписи: sha256</li>
 </ul>
 
 == Changelog ==
