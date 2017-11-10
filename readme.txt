@@ -8,7 +8,7 @@ WC requires at least: 2.2
 WC tested up to: 2.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Donate link: https://mofsy.ru/about/help
+Donate link: https://mofsy.ru/others/help
 
 == Description ==
 Allows you to use Webmoney payment gateway with the WooCommerce plugin.
