@@ -136,7 +136,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Set woocommerce version
          */
-        $this->wc_version = woocommerce_webmoney_get_version();
+        $this->wc_version = gatework_wc_get_version_active();
 
         /**
          * Logger debug
