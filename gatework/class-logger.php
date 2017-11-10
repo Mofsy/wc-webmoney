@@ -8,7 +8,7 @@
   +----------------------------------------------------------+
 */
 
-class WC_Webmoney_Logger
+class WC_Gatework_Logger
 {
     /**
      * @var array

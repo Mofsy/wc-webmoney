@@ -81,7 +81,7 @@ class WC_Webmoney extends WC_Payment_Gateway
     /**
      * Logger
      *
-     * @var WC_Webmoney_Logger
+     * @var WC_Gatework_Logger
      */
     public $logger;
 
@@ -113,7 +113,7 @@ class WC_Webmoney extends WC_Payment_Gateway
             'url' => $wp_dir['baseurl'] . '/wc-webmoney.txt'
         );
 
-        $this->logger = new WC_Webmoney_Logger($this->logger_path['dir'], $this->get_option('logger'));
+        $this->logger = new WC_Gatework_Logger($this->logger_path['dir'], $this->get_option('logger'));
 
         /**
          * Debug tool notice
@@ -210,6 +210,9 @@ class WC_Webmoney extends WC_Payment_Gateway
              */
             $this->logger->addNotice('Language auto is enable.');
 
+	        /**
+	         * Get locale
+	         */
             $lang = get_locale();
             switch($lang)
             {

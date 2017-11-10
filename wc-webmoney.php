@@ -8,8 +8,7 @@
     Author URI: https://mofsy.ru
     Text Domain: wc-webmoney
     Domain Path: /languages
-
-    Copyright: © 2015-2017 Mofsy.
+    Copyright: © 2015-2017 Mofsy
 	License: GNU General Public License v3.0
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -45,7 +44,7 @@ function woocommerce_webmoney_init()
      *
      * @since 0.4.0.1
      */
-    include_once dirname(__FILE__) . '/class-wc-webmoney-logger.php';
+    include_once dirname(__FILE__) . '/gatework/class-logger.php';
 
     /**
      * Define plugin url
@@ -73,12 +72,12 @@ function woocommerce_webmoney_init()
     /**
      * Add the gateway to WooCommerce
      **/
-    function woocommerce_add_webmoney_gateway($methods)
+    function wc_webmoney_gateway_add($methods)
     {
         $methods[] = 'WC_Webmoney';
 
         return $methods;
     }
 
-    add_filter('woocommerce_payment_gateways', 'woocommerce_add_webmoney_gateway');
+    add_filter('woocommerce_payment_gateways', 'wc_webmoney_gateway_add');
 }
