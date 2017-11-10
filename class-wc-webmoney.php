@@ -74,6 +74,8 @@ class WC_Webmoney extends WC_Payment_Gateway
     public $language = 'ru';
 
     /**
+     * Test mode
+     *
      * @var mixed
      */
     public $test = '';
@@ -141,7 +143,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Logger debug
          */
-        $this->logger->addDebug('WooCommerce version: '.$this->wc_version);
+        $this->logger->addDebug('WooCommerce version: ' . $this->wc_version);
 
         /**
          * Set unique id
@@ -305,6 +307,7 @@ class WC_Webmoney extends WC_Payment_Gateway
              */
             $this->logger->addDebug('Manage options is allow.');
         }
+
         /**
          * Receipt page
          */
@@ -314,11 +317,6 @@ class WC_Webmoney extends WC_Payment_Gateway
          * Payment listener/API hook
          */
         add_action('woocommerce_api_wc_' . $this->id, array($this, 'check_ipn'));
-
-        /**
-         * Send report API hook
-         */
-        add_action('woocommerce_api_wc_' . $this->id . '_send_report', array($this, 'send_report_callback'));
 
         /**
          * Gate allow?
@@ -343,6 +341,8 @@ class WC_Webmoney extends WC_Payment_Gateway
     }
 
     /**
+     * Get purse from currency
+     *
      * @param $currency
      * @return mixed
      */
@@ -870,6 +870,8 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
     }
 
     /**
+     * Thx you page
+     *
      * receipt_page
      **/
     public function receipt_page($order)
