@@ -2,10 +2,11 @@
 Contributors: Mofsy
 Tags: webmoney, payment gateway, woo commerce, woocommerce, ecommerce, gateway, woo webmoney, wmtransfer, merchant, woo
 Requires at least: 3.0
-Tested up to: 4.7
+Tested up to: 4.9
+Requires PHP: 5.4
 Stable tag: trunk
-WC requires at least: 2.2
-WC tested up to: 2.6
+WC requires at least: 2.4
+WC tested up to: 3.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://mofsy.ru/others/help
@@ -16,10 +17,7 @@ This is the best payment gateway plugin for Webmoney, because it is the most int
 
 Support purses: **WMR**, **WMZ**, **WME**, **WMU**
 
-Found a bug? Send it with the page in the plugin settings one click :)
-
 == Translations ==
-
 * English - default, always included
 * Russian - always included
 
