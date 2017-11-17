@@ -835,6 +835,9 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
 
     /**
      * Process the payment and return the result
+     *
+     * @param int $order_id
+     * @return array
      **/
     public function process_payment($order_id)
     {
@@ -851,21 +854,12 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
         $this->logger->addNotice('The client started to pay.');
 
         /**
-         * Check version
+         * Return
          */
-        if ( !version_compare( $this->wc_version, '2.1.0', '<' ) )
-        {
-            return array
-            (
-                'result' => 'success',
-                'redirect' => $order->get_checkout_payment_url( true )
-            );
-        }
-
         return array
         (
             'result' => 'success',
-            'redirect'	=> add_query_arg('order-pay', $order->id, add_query_arg('key', $order->order_key, get_permalink(woocommerce_get_page_id('pay'))))
+            'redirect' => $order->get_checkout_payment_url( true )
         );
     }
 
