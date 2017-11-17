@@ -438,7 +438,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         }
 
         /**
-         * Check test mode and admin rights
+         * Check test mode for admin rights
          */
         if ($this->test !== '' && !current_user_can( 'manage_options' ))
         {
@@ -1315,9 +1315,11 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
      **/
     public function test_notice()
     {
+        $link = '<a href="'. admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_webmoney') .'">'.__('here', 'wc-webmoney').'</a>';
+
         ?>
         <div class="update-nag">
-            <?php $link = '<a href="'. admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_webmoney') .'">'.__('here', 'wc-webmoney').'</a>';
+            <?php
             echo sprintf( __( 'Webmoney test mode is enabled. Click %s -  to disable it when you want to start accepting live payment on your site.', 'wc-webmoney' ), $link ) ?>
         </div>
         <?php
