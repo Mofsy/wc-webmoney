@@ -460,7 +460,7 @@ class WC_Webmoney extends WC_Payment_Gateway
     {
         ?>
         <h1><?php _e('Webmoney', 'wc-webmoney'); ?></h1><?php $this->get_icon(); ?>
-        <p><?php _e('Setting receiving payments through Webmoney Merchant. If the gateway is not working, you can turn error level DEBUG and send the report to the developer. Developer looks for errors and corrected.', 'wc-webmoney'); ?></p>
+        <p><?php _e('Setting receiving payments through Webmoney Merchant. If the gateway is not working, you can turn error level DEBUG.', 'wc-webmoney'); ?></p>
         <hr>
         <?php if ( $this->is_valid_for_use() ) : ?>
 
