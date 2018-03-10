@@ -337,7 +337,6 @@ class WC_Webmoney extends WC_Payment_Gateway
              */
             $this->logger->addInfo('Is NOT valid for use.');
         }
-
     }
 
     /**
@@ -1259,18 +1258,18 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
                 wp_redirect( str_replace('&amp;', '&', $order->get_cancel_order_url() ) );
                 die();
             }
-        }
-        else
-        {
-            /**
-             * Logger notice
-             */
-            $this->logger->addNotice('Api request error. Action not found.');
+            else
+            {
+	            /**
+	             * Logger notice
+	             */
+	            $this->logger->addNotice('Api request error. Action not found.');
 
-            /**
-             * Die :)
-             */
-            wp_die(__('IPN Request Failure.', 'wc-webmoney'), 'Result success', array('response' => '200'));
+	            /**
+	             * Die :)
+	             */
+	            wp_die(__('IPN Request Failure.', 'wc-webmoney'), 'IPN Request Failure - Webmoney Gateway', array('response' => '200'));
+            }
         }
     }
 
