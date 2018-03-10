@@ -29,29 +29,28 @@ function woocommerce_webmoney_init()
     {
         return;
     }
+
     if(class_exists('WC_Webmoney'))
     {
         return;
     }
 
 	/**
+	 * Define plugin url
+	 */
+	define('WC_WEBMONEY_URL', plugin_dir_url(__FILE__));
+
+	/**
 	 * GateWork
 	 */
-	include_once dirname(__FILE__) . '/gatework/functions.php';
+	include_once __DIR__ . '/gatework/init.php';
 
-    /**
-     * Wc_Webmoney_Logger class load
-     *
-     * @since 0.4.0.1
-     */
-    include_once dirname(__FILE__) . '/gatework/class-logger.php';
+	/**
+	 * Gateway class load
+	 */
+	include_once dirname(__FILE__) . '/class-wc-webmoney.php';
 
-    /**
-     * Define plugin url
-     */
-    define('WC_WEBMONEY_URL', plugin_dir_url(__FILE__));
-
-    /**
+	/**
      * Load language
      */
     load_plugin_textdomain( 'wc-webmoney',  false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
@@ -64,14 +63,13 @@ function woocommerce_webmoney_init()
         add_filter( 'woocommerce_valid_order_statuses_for_payment', array( 'WC_Webmoney', 'valid_order_statuses_for_payment' ), 52, 2 );
     }
 
-    /**
-     * Gateway class load
-     */
-    include_once dirname(__FILE__) . '/class-wc-webmoney.php';
-
-    /**
-     * Add the gateway to WooCommerce
-     **/
+	/**
+	 * Add the gateway to WooCommerce
+	 *
+	 * @param $methods
+	 *
+	 * @return array
+	 */
     function wc_webmoney_gateway_add($methods)
     {
         $methods[] = 'WC_Webmoney';
