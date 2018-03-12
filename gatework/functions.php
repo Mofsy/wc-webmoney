@@ -30,3 +30,13 @@ function gatework_wc_get_version_active()
 
 	return null;
 }
+
+/**
+ * Get Base Currency Code from WooCommerce.
+ *
+ * @return string
+ */
+function gatework_get_wc_currency()
+{
+	return get_woocommerce_currency();
+}

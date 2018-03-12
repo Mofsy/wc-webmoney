@@ -106,7 +106,7 @@ class WC_Webmoney extends WC_Payment_Gateway
     public function __construct()
     {
         /**
-         * Logger?
+         * Logger
          */
         $wp_dir = wp_upload_dir();
         $this->logger_path = array
@@ -128,7 +128,7 @@ class WC_Webmoney extends WC_Payment_Gateway
         /**
          * Get currency
          */
-        $this->currency = get_woocommerce_currency();
+        $this->currency = gatework_get_wc_currency();
 
         /**
          * Logger debug
