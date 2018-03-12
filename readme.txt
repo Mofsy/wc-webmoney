@@ -41,13 +41,15 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 
 == Changelog ==
 
-= 0.6.1.2 =
-* Test on WP 4.8
-* Test on WP 4.9
+= 1.0.0.1 =
 * Add support WC version 3.3
 * Init Gatework
 * Remove free report
 * Fix translation files
+
+= 0.6.1.2 =
+* Test on WP 4.8
+* Test on WP 4.9
 * Other fix
 
 = 0.6.1.1 =

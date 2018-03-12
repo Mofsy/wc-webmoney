@@ -3,7 +3,7 @@
     Plugin Name: WooCommerce - Webmoney Payment Gateway
     Plugin URI: https://mofsy.ru/projects/woocommerce-webmoney-payment-gateway
     Description: Allows you to use Webmoney payment gateway with the WooCommerce plugin.
-    Version: 0.6.1.2
+    Version: 1.0.0.1
     Author: Mofsy
     Author URI: https://mofsy.ru
     Text Domain: wc-webmoney
@@ -12,25 +12,27 @@
 	License: GNU General Public License v3.0
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
-
 if(!defined('ABSPATH'))
 {
-    exit;
+	exit;
 }
 
+/**
+ * Run
+ *
+ * @action woocommerce_webmoney_init
+ */
 add_action('plugins_loaded', 'woocommerce_webmoney_init', 0);
 
+/**
+ * Init plugin gateway
+ */
 function woocommerce_webmoney_init()
 {
     /**
      * Main check
      */
-    if (!class_exists('WC_Payment_Gateway'))
-    {
-        return;
-    }
-
-    if(class_exists('WC_Webmoney'))
+    if (!class_exists('WC_Payment_Gateway') || class_exists('WC_Webmoney'))
     {
         return;
     }
@@ -46,17 +48,19 @@ function woocommerce_webmoney_init()
 	include_once __DIR__ . '/gatework/init.php';
 
 	/**
-	 * Gateway class load
+	 * Gateway main class
 	 */
-	include_once dirname(__FILE__) . '/class-wc-webmoney.php';
+	include_once __DIR__ . '/class-wc-webmoney.php';
 
 	/**
      * Load language
+	 *
+	 * todo: optimize load
      */
-    load_plugin_textdomain( 'wc-webmoney',  false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+    load_plugin_textdomain( 'wc-webmoney',  false, __DIR__ . '/languages' );
 
     /**
-     * Check status
+     * Check status in Order
      */
     if( class_exists('WooCommerce_Payment_Status') )
     {
@@ -77,5 +81,10 @@ function woocommerce_webmoney_init()
         return $methods;
     }
 
+	/**
+	 * Add payment method
+	 *
+	 * @filter wc_webmoney_gateway_add
+	 */
     add_filter('woocommerce_payment_gateways', 'wc_webmoney_gateway_add');
 }
