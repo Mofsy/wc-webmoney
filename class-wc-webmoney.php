@@ -339,6 +339,18 @@ class WC_Webmoney extends WC_Payment_Gateway
         }
     }
 
+	/**
+	 * Check if the gateway is available for use.
+     *
+	 * @since 1.0.0.1
+     *
+	 * @return bool
+	 */
+	public function is_available()
+    {
+		return parent::is_available();
+	}
+
     /**
      * Get purse from currency
      *
