@@ -1105,7 +1105,7 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
                     /**
                      * Check hash
                      */
-                    if(count($LMI_HASH) > 0 && $local_hash !== $LMI_HASH)
+                    if($local_hash !== $LMI_HASH)
                     {
                         $validate = false;
 
