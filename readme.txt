@@ -5,7 +5,7 @@ Requires at least: 3.0
 Tested up to: 4.9
 Requires PHP: 5.4
 Stable tag: trunk
-WC requires at least: 2.4
+WC requires at least: 3.0
 WC tested up to: 3.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -46,6 +46,7 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 * Init Gatework
 * Remove free report
 * Fix translation files
+* Remove support WC versions 2.x
 
 = 0.6.1.2 =
 * Test on WP 4.8
