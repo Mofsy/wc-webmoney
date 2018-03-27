@@ -733,7 +733,7 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
         /**
          * Sum
          */
-        $out_sum = number_format($order->order_total, 2, '.', '');
+        $out_sum = number_format($order->get_total(), 2, '.', '');
         $args['LMI_PAYMENT_AMOUNT'] = $out_sum;
 
         /**
@@ -743,7 +743,7 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
         $items = $order->get_items();
         foreach ( $items as $item )
         {
-            $description .= $item['name'];
+            $description .= ' ' . $item['name'];
         }
 
 	    /**
@@ -764,7 +764,7 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
 
         if($description_count > 200)
         {
-            $description = __('Product number: ' . $order_id, 'wc-webmoney');
+            $description = __('Order number: ' . $order_id, 'wc-webmoney');
         }
 
         $args['LMI_PAYMENT_DESC'] = $description;
@@ -778,7 +778,7 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
         /**
          * Rewrite currency from order
          */
-        $this->currency = $order->order_currency;
+        $this->currency = $order->get_currency();
 
         /**
          * Select purse
@@ -802,9 +802,9 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
         /**
          * Billing email
          */
-        if(!empty($order->billing_email))
+        if(!empty($order->get_billing_email()))
         {
-            $args['LMI_PAYMER_EMAIL'] = $order->billing_email;
+            $args['LMI_PAYMER_EMAIL'] = $order->get_billing_email();
         }
 
         /**
@@ -821,7 +821,7 @@ By default, the error rate should not be less than ERROR.', 'wc-webmoney' ),
          */
 
         /**
-         * what?
+         * Apply args filter
          */
         $args = apply_filters('woocommerce_webmoney_args', $args);
 
