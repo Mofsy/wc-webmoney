@@ -166,6 +166,11 @@ class WC_Webmoney extends WC_Payment_Gateway
          */
         $this->title = $this->get_option('title');
 
+	    /**
+	     * Admin title
+	     */
+	    $this->method_title = 'Webmoney';
+
         /**
          * Testing?
          */
