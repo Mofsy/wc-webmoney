@@ -1,4 +1,4 @@
-=== WooCommerce - Webmoney Payment Gateway===
+=== Webmoney - payment gateway for WooCommerce ===
 Contributors: Mofsy
 Tags: webmoney, payment gateway, woo commerce, woocommerce, ecommerce, gateway, woo webmoney, wmtransfer, merchant, woo, вебмани
 Requires at least: 3.0
@@ -12,12 +12,30 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://mofsy.ru/others/help
 
 == Description ==
-Allows you to use Webmoney payment gateway with the WooCommerce plugin.
-This is the best payment gateway plugin for Webmoney, because it is the most integrated with Webmoney Merchant capabilities and is available for most versions WooCommerce and Wordpress.
+Allows you to use the Webmoney with WooCommerce as a payment gateway plugin.
+Created for individuals, individual entrepreneurs and legal entities.
 
-Support purses: **WMR**, **WMZ**, **WME**, **WMU**
+This is the best payment gateway plugin for Webmoney, because it is the most integrated with Webmoney Merchant capabilities and is available for most versions WooCommerce and Wordpress.
+[More description](https://mofsy.ru/projects/wc-webmoney
+
+Questions and answers:
+Email - support@mofsy.ru
+
+= Support external plugins =
+1. WPML (http://wpml.org)
+2. WooCommerce Currency Switcher (https://currency-switcher.com))
+
+= Support currency =
+**WMR**, **WMZ**, **WME**, **WMU**
+
+== Screenshots ==
+
+1. One
+2. Two
+3. Three
 
 == Translations ==
+
 * English - default, always included
 * Russian - always included
 
@@ -25,6 +43,7 @@ Support purses: **WMR**, **WMZ**, **WME**, **WMU**
 So please contribute your language to the plugin to make it even more useful. For translating I recommend the awesome for validating the ["Poedit Editor"](http://www.poedit.net/).
 
 == Installation ==
+
 1. Archive extract and upload folder "wc-webmoney" to /wp-content/plugins
 2. Activation plugin
 3. Setting
