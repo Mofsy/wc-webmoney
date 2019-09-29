@@ -41,6 +41,17 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 
 == Changelog ==
 
+= 2.0.0.1 =
+* Plugin rename
+* Global refactoring
+* Fix localization files
+* Add support last WordPress & WooCommerce
+* Add licence.txt
+* Add WMP currency support
+* Add new hooks
+* Add WooCommerce Currency Switcher support
+* More fix
+
 = 1.0.0.1 =
 * Add support WC version 3.3
 * Init Gatework
