@@ -34,7 +34,10 @@ add_action('plugins_loaded', 'wc_webmoney_init', 0);
  */
 function wc_webmoney_init()
 {
-    /**
+	// hook
+	do_action('wc_webmoney_gateway_init_before');
+
+	/**
      * Main check
      */
     if (!class_exists('WC_Payment_Gateway') || class_exists('WC_Webmoney'))
@@ -45,7 +48,26 @@ function wc_webmoney_init()
 	/**
 	 * Define plugin url
 	 */
-	define('WC_WEBMONEY_URL', plugin_dir_url(__FILE__));
+	if (!defined( 'WC_WEBMONEY_URL' ))
+	{
+		define('WC_WEBMONEY_URL', plugin_dir_url(__FILE__));
+	}
+
+	/**
+	 * Plugin Dir
+	 */
+	if (!defined( 'WC_WEBMONEY_PLUGIN_DIR' ))
+	{
+		define( 'WC_WEBMONEY_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+	}
+
+	/**
+	 * Plugin Name
+	 */
+	if (!defined( 'WC_WEBMONEY_PLUGIN_NAME' ))
+	{
+		define( 'WC_WEBMONEY_PLUGIN_NAME', plugin_basename( __FILE__ ) );
+	}
 
 	/**
 	 * GateWork
@@ -55,41 +77,13 @@ function wc_webmoney_init()
 	/**
 	 * Gateway main class
 	 */
-	include_once __DIR__ . '/class-wc-webmoney.php';
+	include_once __DIR__ . '/includes/class-wc-webmoney.php';
 
 	/**
-     * Load language
-	 *
-	 * todo: optimize load
-     */
-    load_plugin_textdomain( 'wc-webmoney',  false, __DIR__ . '/languages' );
-
-    /**
-     * Check status in Order
-     */
-    if( class_exists('WooCommerce_Payment_Status') )
-    {
-        add_filter( 'woocommerce_valid_order_statuses_for_payment', array( 'WC_Webmoney', 'valid_order_statuses_for_payment' ), 52, 2 );
-    }
-
-	/**
-	 * Add the gateway to WooCommerce
-	 *
-	 * @param $methods
-	 *
-	 * @return array
+	 * Run
 	 */
-    function wc_webmoney_gateway_add($methods)
-    {
-        $methods[] = 'WC_Webmoney';
+	WC_Webmoney::instance();
 
-        return $methods;
-    }
-
-	/**
-	 * Add payment method
-	 *
-	 * @filter wc_webmoney_gateway_add
-	 */
-    add_filter('woocommerce_payment_gateways', 'wc_webmoney_gateway_add');
+	// hook
+	do_action('wc_webmoney_gateway_init_after');
 }
