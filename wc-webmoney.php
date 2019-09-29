@@ -22,14 +22,17 @@ if(!defined('ABSPATH'))
 /**
  * Run
  *
- * @action woocommerce_webmoney_init
+ * @action wc_webmoney_init
  */
-add_action('plugins_loaded', 'woocommerce_webmoney_init', 0);
+add_action('plugins_loaded', 'wc_webmoney_init', 0);
 
 /**
  * Init plugin gateway
+ *
+ * @action wc_webmoney_gateway_init_before
+ * @action wc_webmoney_gateway_init_after
  */
-function woocommerce_webmoney_init()
+function wc_webmoney_init()
 {
     /**
      * Main check
