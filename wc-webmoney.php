@@ -10,7 +10,7 @@
     Author URI: https://mofsy.ru
     Text Domain: wc-webmoney
     Domain Path: /languages
-    Copyright: © 2015-2018 Mofsy
+    Copyright: © 2015-2019 Mofsy
 	License: GNU General Public License v3.0
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
