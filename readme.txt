@@ -26,6 +26,9 @@ Email - support@mofsy.ru
 2. WooCommerce Currency Switcher (https://currency-switcher.com))
 
 = Support currency =
+**RUB**, **USD**, **EUR**, **UAH**
+
+= Support wallets =
 **WMR**, **WMZ**, **WME**, **WMU**
 
 == Screenshots ==
@@ -48,16 +51,6 @@ So please contribute your language to the plugin to make it even more useful. Fo
 2. Activation plugin
 3. Setting
 
-For https://merchant.wmtransfer.com/conf/purses.asp settings:
-<ul style="list-style:none;">
-<li>Result URL: http://your_domain/?wc-api=wc_webmoney&action=result</li>
-<li>Send parameters in the preliminary inquiry: Yes, security is good.</li>
-<li>Success URL: http://your_domain/?wc-api=wc_webmoney&action=success</li>
-<li>Fail URL: http://your_domain/?wc-api=wc_webmoney&action=fail</li>
-<li>Request method for all: POST</li>
-<li>Control sign forming method: sha256</li>
-</ul>
-
 == Changelog ==
 
 = 2.0.0.1 =
@@ -66,7 +59,7 @@ For https://merchant.wmtransfer.com/conf/purses.asp settings:
 * Fix localization files
 * Add support last WordPress & WooCommerce
 * Add licence.txt
-* Add WMP currency support
+* Add WMP wallet support
 * Add new hooks
 * Add WooCommerce Currency Switcher support
 * More fix
