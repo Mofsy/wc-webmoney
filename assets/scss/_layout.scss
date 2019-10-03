@@ -1,0 +1,59 @@
+.woocommerce table.form-table
+{
+  background-color: #ffffff;
+
+  input.regular-input
+  {
+    width: 100%!important;
+  }
+
+  input.disabled, input:disabled
+  {
+    color: #000000!important;
+    background-color: rgb(229, 229, 229)!important;
+  }
+
+  #woocommerce_webmoney_result_url, #woocommerce_webmoney_success_url, #woocommerce_webmoney_fail_url
+  {
+    display: none!important;
+  }
+
+  .webmoney_urls
+  {
+    color: #000000!important;
+    background-color: rgb(229, 229, 229)!important;
+    padding: 10px;
+  }
+}
+
+.woocommerce table.form-table th
+{
+  padding-left: 10px!important;
+  padding-right: 10px!important;
+}
+
+.form-table td
+{
+  padding: 10px!important;
+}
+
+.col-17
+{
+  background-color: #f7f7f7;
+  padding-bottom: 10px;
+}
+
+.wc-settings-sub-title
+{
+  margin-top: 0.5rem;
+}
+
+.list-group-item
+{
+  padding: 10px;
+
+  a
+  {
+    font-size: 14px;
+  }
+}
