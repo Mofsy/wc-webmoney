@@ -327,7 +327,15 @@ final class WC_Webmoney
 		{
 			$wp_dir = wp_upload_dir();
 
-			$this->set_logger(new WC_Gatework_Logger( $wp_dir['basedir'] . '/wc-webmoney.txt', 400));
+			$options = get_option('woocommerce_webmoney_settings', array());
+			$level = 400;
+
+			if(isset($options['logger']) && $options['logger'] !== '')
+			{
+				$level = $options['logger'];
+			}
+
+			$this->set_logger(new WC_Gatework_Logger( $wp_dir['basedir'] . '/wc-webmoney.txt', $level));
 		}
 	}
 

@@ -1064,6 +1064,12 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 		do_action('wc_webmoney_input_payment_notifications');
 
 		/**
+		 * Debug
+		 */
+		WC_Webmoney::instance()->get_logger()->addDebug('input_payment_notifications get', $_GET);
+		WC_Webmoney::instance()->get_logger()->addDebug('input_payment_notifications post', $_POST);
+
+		/**
 		 * Action not found
 		 */
 		if(!array_key_exists('action', $_GET) || $_GET['action'] === '')
@@ -1078,135 +1084,135 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 		 * Order id
 		 */
 		$LMI_PAYMENT_NO = 0;
-			if(array_key_exists('LMI_PAYMENT_NO', $_REQUEST))
+		if(array_key_exists('LMI_PAYMENT_NO', $_POST))
 		{
-			$LMI_PAYMENT_NO = $_REQUEST['LMI_PAYMENT_NO'];
+			$LMI_PAYMENT_NO = $_POST['LMI_PAYMENT_NO'];
 		}
 
 		/**
 		 * Sum
 		 */
 		$LMI_PAYMENT_AMOUNT = 0;
-		if(array_key_exists('LMI_PAYMENT_AMOUNT', $_REQUEST))
+		if(array_key_exists('LMI_PAYMENT_AMOUNT', $_POST))
 		{
-			$LMI_PAYMENT_AMOUNT = $_REQUEST['LMI_PAYMENT_AMOUNT'];
+			$LMI_PAYMENT_AMOUNT = $_POST['LMI_PAYMENT_AMOUNT'];
 		}
 
 		/**
 		 * Pre request flag
 		 */
 		$LMI_PREREQUEST = 0;
-		if(array_key_exists('LMI_PREREQUEST', $_REQUEST))
+		if(array_key_exists('LMI_PREREQUEST', $_POST))
 		{
-			$LMI_PREREQUEST = (int) $_REQUEST['LMI_PREREQUEST'];
+			$LMI_PREREQUEST = (int) $_POST['LMI_PREREQUEST'];
 		}
 
 		/**
 		 * Purse merchant
 		 */
 		$LMI_PAYEE_PURSE = '';
-		if(array_key_exists('LMI_PAYEE_PURSE', $_REQUEST))
+		if(array_key_exists('LMI_PAYEE_PURSE', $_POST))
 		{
-			$LMI_PAYEE_PURSE = $_REQUEST['LMI_PAYEE_PURSE'];
+			$LMI_PAYEE_PURSE = $_POST['LMI_PAYEE_PURSE'];
 		}
 
 		/**
 		 * Testing?
 		 */
 		$LMI_MODE = 0;
-		if(array_key_exists('LMI_MODE', $_REQUEST))
+		if(array_key_exists('LMI_MODE', $_POST))
 		{
-			$LMI_MODE = (int) $_REQUEST['LMI_MODE'];
+			$LMI_MODE = (int) $_POST['LMI_MODE'];
 		}
 
 		/**
 		 * Secret key
 		 */
 		$LMI_SECRET_KEY = '';
-		if(array_key_exists('LMI_SECRET_KEY', $_REQUEST))
+		if(array_key_exists('LMI_SECRET_KEY', $_POST))
 		{
-			$LMI_SECRET_KEY = $_REQUEST['LMI_SECRET_KEY'];
+			$LMI_SECRET_KEY = $_POST['LMI_SECRET_KEY'];
 		}
 
 		/**
 		 * Order id from WebMoney Transfer
 		 */
 		$LMI_SYS_INVS_NO = 0;
-		if(array_key_exists('LMI_SYS_INVS_NO', $_REQUEST))
+		if(array_key_exists('LMI_SYS_INVS_NO', $_POST))
 		{
-			$LMI_SYS_INVS_NO = $_REQUEST['LMI_SYS_INVS_NO'];
+			$LMI_SYS_INVS_NO = $_POST['LMI_SYS_INVS_NO'];
 		}
 
 		/**
 		 * Payment id from WebMoney Transfer
 		 */
 		$LMI_SYS_TRANS_NO = 0;
-		if(array_key_exists('LMI_SYS_TRANS_NO', $_REQUEST))
+		if(array_key_exists('LMI_SYS_TRANS_NO', $_POST))
 		{
-			$LMI_SYS_TRANS_NO = $_REQUEST['LMI_SYS_TRANS_NO'];
+			$LMI_SYS_TRANS_NO = $_POST['LMI_SYS_TRANS_NO'];
 		}
 
 		/**
 		 * Payment date and time from WebMoney Transfer
 		 */
 		$LMI_SYS_TRANS_DATE = '';
-		if(array_key_exists('LMI_SYS_TRANS_DATE', $_REQUEST))
+		if(array_key_exists('LMI_SYS_TRANS_DATE', $_POST))
 		{
-			$LMI_SYS_TRANS_DATE = $_REQUEST['LMI_SYS_TRANS_DATE'];
+			$LMI_SYS_TRANS_DATE = $_POST['LMI_SYS_TRANS_DATE'];
 		}
 
 		/**
 		 * Purse client
 		 */
 		$LMI_PAYER_PURSE = '';
-		if(array_key_exists('LMI_PAYER_PURSE', $_REQUEST))
+		if(array_key_exists('LMI_PAYER_PURSE', $_POST))
 		{
-			$LMI_PAYER_PURSE = $_REQUEST['LMI_PAYER_PURSE'];
+			$LMI_PAYER_PURSE = $_POST['LMI_PAYER_PURSE'];
 		}
 
 		/**
 		 * WMID client
 		 */
 		$LMI_PAYER_WM = '';
-		if(array_key_exists('LMI_PAYER_WM', $_REQUEST))
+		if(array_key_exists('LMI_PAYER_WM', $_POST))
 		{
-			$LMI_PAYER_WM = $_REQUEST['LMI_PAYER_WM'];
+			$LMI_PAYER_WM = $_POST['LMI_PAYER_WM'];
 		}
 
 		/**
 		 * WMID Capitaller
 		 */
 		$LMI_CAPITALLER_WMID = '';
-		if(array_key_exists('LMI_CAPITALLER_WMID', $_REQUEST))
+		if(array_key_exists('LMI_CAPITALLER_WMID', $_POST))
 		{
-			$LMI_CAPITALLER_WMID =  $_REQUEST['LMI_CAPITALLER_WMID'];
+			$LMI_CAPITALLER_WMID =  $_POST['LMI_CAPITALLER_WMID'];
 		}
 
 		/**
 		 * Email client
 		 */
 		$LMI_PAYMER_EMAIL = '';
-		if(array_key_exists('LMI_PAYMER_EMAIL', $_REQUEST))
+		if(array_key_exists('LMI_PAYMER_EMAIL', $_POST))
 		{
-			$LMI_PAYMER_EMAIL =  $_REQUEST['LMI_PAYMER_EMAIL'];
+			$LMI_PAYMER_EMAIL =  $_POST['LMI_PAYMER_EMAIL'];
 		}
 
 		/**
 		 * IP client
 		 */
 		$LMI_PAYER_IP = '';
-		if(array_key_exists('LMI_PAYER_IP', $_REQUEST))
+		if(array_key_exists('LMI_PAYER_IP', $_POST))
 		{
-			$LMI_PAYER_IP =  $_REQUEST['LMI_PAYER_IP'];
+			$LMI_PAYER_IP =  $_POST['LMI_PAYER_IP'];
 		}
 
 		/**
 		 * Hash
 		 */
 		$LMI_HASH = '';
-		if(array_key_exists('LMI_HASH', $_REQUEST))
+		if(array_key_exists('LMI_HASH', $_POST))
 		{
-			$LMI_HASH = $_REQUEST['LMI_HASH'];
+			$LMI_HASH = $_POST['LMI_HASH'];
 		}
 
 		/**
@@ -1231,8 +1237,13 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 		/**
 		 * Order not found
 		 */
-		if($order === false)
+		if($order === false && $_GET['action'] !== 'result')
 		{
+			/**
+			 * Debug
+			 */
+			WC_Webmoney::instance()->get_logger()->addError('input_payment_notifications order not found by id: '. $LMI_PAYMENT_NO);
+
 			/**
 			 * Send Service unavailable
 			 */
@@ -1245,10 +1256,30 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 		if ($_GET['action'] === 'result')
 		{
 			/**
+			 * Check in settings
+			 */
+			if($order === false)
+			{
+				/**
+				 * Debug
+				 */
+				WC_Webmoney::instance()->get_logger()->addInfo('input_payment_notifications check result url');
+
+				/**
+				 * Send Service available
+				 */
+				die('Ok');
+			}
+			/**
 			 * Check pre request
 			 */
 			if($LMI_PREREQUEST === 1)
 			{
+				/**
+				 * Debug
+				 */
+				WC_Webmoney::instance()->get_logger()->addInfo('input_payment_notifications PRE request success'. $LMI_PAYMENT_NO);
+
 				/**
 				 * Add order note
 				 */
@@ -1268,6 +1299,11 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 				 */
 				if($local_hash !== $LMI_HASH)
 				{
+					/**
+					 * Debug
+					 */
+					WC_Webmoney::instance()->get_logger()->addError('input_payment_notifications Validate hash error'. $LMI_PAYMENT_NO);
+
 					$validate = false;
 
 					/**
@@ -1281,6 +1317,11 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 				 */
 				if($LMI_SECRET_KEY !== '' && $this->secret_key !== $LMI_SECRET_KEY)
 				{
+					/**
+					 * Debug
+					 */
+					WC_Webmoney::instance()->get_logger()->addError('input_payment_notifications Validate secret key error'. $LMI_PAYMENT_NO);
+
 					$validate = false;
 
 					/**
@@ -1325,6 +1366,11 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 					}
 
 					/**
+					 * Debug
+					 */
+					WC_Webmoney::instance()->get_logger()->addError('input_payment_notifications payment_complete'. $LMI_SYS_TRANS_NO);
+
+					/**
 					 * Set status is payment
 					 */
 					$order->payment_complete($LMI_SYS_TRANS_NO);
@@ -1333,11 +1379,21 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 				else
 				{
 					/**
+					 * Debug
+					 */
+					WC_Webmoney::instance()->get_logger()->addError('input_payment_notifications Validate false'. $LMI_SYS_TRANS_NO);
+
+					/**
 					 * Send Service unavailable
 					 */
 					wp_die(__('Payment error, please pay other time.', 'wc-webmoney'), 'Payment error', array('response' => '503'));
 				}
 			}
+
+			/**
+			 * Debug
+			 */
+			WC_Webmoney::instance()->get_logger()->addError('input_payment_notifications Result final error'. $LMI_SYS_TRANS_NO);
 
 			/**
 			 * Send Service unavailable
@@ -1349,6 +1405,11 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 		 */
 		else if ($_GET['action'] === 'success')
 		{
+			/**
+			 * Debug
+			 */
+			WC_Webmoney::instance()->get_logger()->addDebug('input_payment_notifications Success');
+
 			/**
 			 * Add order note
 			 */
@@ -1371,14 +1432,19 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 		else if ($_GET['action'] === 'fail')
 		{
 			/**
+			 * Debug
+			 */
+			WC_Webmoney::instance()->get_logger()->addDebug('input_payment_notifications Fail');
+
+			/**
 			 * Add order note
 			 */
-			$order->add_order_note(sprintf(__('The order has not been paid. WMID: %1$s and purse: %2$s and IP: %3$s', 'wc-webmoney'), $LMI_PAYER_WM, $LMI_PAYER_PURSE, $LMI_PAYER_IP));
+			$order->add_order_note(__('Client return to fail url. The order has not been paid.', 'wc-webmoney'));
 
 			/**
 			 * Set status is failed
 			 */
-			$order->update_status('failed');
+			//$order->update_status('failed');
 
 			/**
 			 * Redirect to cancel
