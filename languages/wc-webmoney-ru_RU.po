@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Webmoney - payment gateway for WooCommerce\n"
-"POT-Creation-Date: 2019-10-03 20:04+0300\n"
-"PO-Revision-Date: 2019-10-03 20:21+0300\n"
+"POT-Creation-Date: 2019-10-05 11:56+0300\n"
+"PO-Revision-Date: 2019-10-05 12:01+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <support@mofsy.ru>\n"
 "Language: ru_RU\n"
@@ -27,7 +27,7 @@ msgstr "Webmoney"
 
 #: includes/class-wc-webmoney-method.php:88
 msgid "Pay via Webmoney."
-msgstr "Оплата с помощью Webmoney"
+msgstr "Оплата с помощью Webmoney."
 
 #: includes/class-wc-webmoney-method.php:397
 msgid "Main settings"
@@ -129,11 +129,9 @@ msgid "Will be all fail"
 msgstr "Выполнение с ошибкой"
 
 #: includes/class-wc-webmoney-method.php:467
-#, fuzzy, php-format
-#| msgid ""
-#| "80%% of test payments will be successful, 20%% of test payments will fail"
+#, php-format
 msgid "80% of will be successful, 20% of will be fail"
-msgstr "80%% платежей успешно, 20%% не успешно"
+msgstr ""
 
 #: includes/class-wc-webmoney-method.php:473
 msgid "Enable logging?"
@@ -210,10 +208,8 @@ msgid "This is the name that the user sees during the payment."
 msgstr "Заголовок, который видит пользователь в процессе оформления заказа."
 
 #: includes/class-wc-webmoney-method.php:549
-#, fuzzy
-#| msgid "Webmoney"
 msgid "webmoney"
-msgstr "Webmoney"
+msgstr "webmoney"
 
 #: includes/class-wc-webmoney-method.php:554
 msgid "Order button text"
@@ -241,11 +237,11 @@ msgstr "Описанием метода оплаты которое клиент
 
 #: includes/class-wc-webmoney-method.php:565
 msgid "Payment via Webmoney."
-msgstr "Оплата с помощью Webmoney"
+msgstr "Оплата с помощью Webmoney."
 
 #: includes/class-wc-webmoney-method.php:582
 msgid "Purse type: WMR"
-msgstr "Кошелек WMR"
+msgstr "Тип кошелька: WMR"
 
 #: includes/class-wc-webmoney-method.php:584
 #: includes/class-wc-webmoney-method.php:619
@@ -275,11 +271,11 @@ msgstr "Секретный ключ для WMR"
 
 #: includes/class-wc-webmoney-method.php:599
 msgid "Please write Secret key for WMR purse."
-msgstr "Пожалуйста, введите Секретный ключ  для WMR"
+msgstr "Пожалуйста, введите Секретный ключ  для WMR."
 
 #: includes/class-wc-webmoney-method.php:617
 msgid "Purse type: WMP"
-msgstr "Кошелек WMP"
+msgstr "Тип кошелька:  WMP"
 
 #: includes/class-wc-webmoney-method.php:624
 msgid "Purse WMP"
@@ -331,7 +327,7 @@ msgstr "Пожалуйста, введите Секретный ключ для 
 
 #: includes/class-wc-webmoney-method.php:687
 msgid "Purse type: WMZ"
-msgstr "Кошелек WMZ"
+msgstr "Тип кошелька: WMZ"
 
 #: includes/class-wc-webmoney-method.php:689
 msgid "This type of wallet receives money from orders in currency: USD"
@@ -421,68 +417,67 @@ msgstr "Оплатить"
 msgid "Cancel & return to cart"
 msgstr "Отменить и вернутся в корзину"
 
-#: includes/class-wc-webmoney-method.php:1074
+#: includes/class-wc-webmoney-method.php:1080
 msgid "Action error."
 msgstr "Ошибка действия."
 
-#: includes/class-wc-webmoney-method.php:1239
+#: includes/class-wc-webmoney-method.php:1250
 msgid "Order not found."
 msgstr "Заказ не найден."
 
-#: includes/class-wc-webmoney-method.php:1255
+#: includes/class-wc-webmoney-method.php:1286
 #, php-format
 msgid "Webmoney PRE request success. WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr "Webmoney предзапрос выполнен. WMID: %1$s Кошелек: %2$s IP: %3$s"
 
-#: includes/class-wc-webmoney-method.php:1276
+#: includes/class-wc-webmoney-method.php:1312
 #, php-format
 msgid "Validate hash error. Local: %1$s Remote: %2$s"
 msgstr "Ошибка валидации хеша. Локальный: %1$s Удаленный: %2$s"
 
-#: includes/class-wc-webmoney-method.php:1289
+#: includes/class-wc-webmoney-method.php:1330
 #, php-format
 msgid "Validate secret key error. Local: %1$s Remote: %2$s"
 msgstr "Ошибка проверки секретного ключа. Локальный: %1$s Удаленный: %2$s"
 
-#: includes/class-wc-webmoney-method.php:1314
+#: includes/class-wc-webmoney-method.php:1355
 #, php-format
 msgid ""
 "Order successfully paid (TEST MODE). WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr ""
 "Счет успешно оплачен (ТЕСТОВЫЙ ПЛАТЕЖ). WMID: %1$s Кошелек: %2$s IP: %3$s"
 
-#: includes/class-wc-webmoney-method.php:1324
+#: includes/class-wc-webmoney-method.php:1365
 #, php-format
 msgid "Order successfully paid. WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr "Счет успешно оплачен. WMID: %1$s Кошелек: %2$s IP: %3$s"
 
-#: includes/class-wc-webmoney-method.php:1338
-#: includes/class-wc-webmoney-method.php:1345
+#: includes/class-wc-webmoney-method.php:1389
+#: includes/class-wc-webmoney-method.php:1401
 msgid "Payment error, please pay other time."
 msgstr "Ошибка платежа, пожалуйста повторите попытку позже."
 
-#: includes/class-wc-webmoney-method.php:1355
+#: includes/class-wc-webmoney-method.php:1416
 msgid "Client return to success page."
 msgstr "Клиент вернулся на страницу успешного платежа."
 
-#: includes/class-wc-webmoney-method.php:1376
-#, php-format
-msgid "The order has not been paid. WMID: %1$s and purse: %2$s and IP: %3$s"
-msgstr "Счет не был оплачен. WMID: %1$s Кошелек: %2$s IP: %3$s"
+#: includes/class-wc-webmoney-method.php:1442
+msgid "Client return to fail url. The order has not been paid."
+msgstr "Клиент вернулся на fail url. Счет не был оплачен."
 
-#: includes/class-wc-webmoney-method.php:1393
+#: includes/class-wc-webmoney-method.php:1459
 msgid "Api request error. Action not found."
 msgstr "Ошибка запроса Api. Действие не найдено."
 
-#: includes/class-wc-webmoney.php:365
+#: includes/class-wc-webmoney.php:373
 msgid "Buy Premium add-on"
 msgstr "Купить премиум"
 
-#: includes/class-wc-webmoney.php:380
+#: includes/class-wc-webmoney.php:388
 msgid "Settings"
 msgstr "Настройки"
 
-#: includes/class-wc-webmoney.php:410
+#: includes/class-wc-webmoney.php:418
 msgid ""
 "The plugin for accepting payments through Webmoney for WooCommerce has been "
 "updated to a version that requires additional configuration."
@@ -490,40 +485,40 @@ msgstr ""
 "Плагин для приема платежей через Webmoney для WooCommerce обновлен до "
 "версии, требующей дополнительной настройки."
 
-#: includes/class-wc-webmoney.php:412
+#: includes/class-wc-webmoney.php:420
 msgid "here"
 msgstr "сюда"
 
-#: includes/class-wc-webmoney.php:413
+#: includes/class-wc-webmoney.php:421
 #, php-format
 msgid "Press %s (to go to payment gateway settings)."
 msgstr "Нажмите %s (для перехода к настройкам платежного шлюза)."
 
-#: includes/class-wc-webmoney.php:518
+#: includes/class-wc-webmoney.php:526
 msgid "Useful information"
 msgstr "Полезная информация"
 
-#: includes/class-wc-webmoney.php:521 includes/class-wc-webmoney.php:543
+#: includes/class-wc-webmoney.php:529 includes/class-wc-webmoney.php:551
 msgid "Official plugin page"
 msgstr "Официальная страница плагина"
 
-#: includes/class-wc-webmoney.php:522
+#: includes/class-wc-webmoney.php:530
 msgid "Related news: webmoney"
 msgstr "Новости по теме: webmoney"
 
-#: includes/class-wc-webmoney.php:523
+#: includes/class-wc-webmoney.php:531
 msgid "Plugins for WooCommerce"
 msgstr "Плагины для WooCommerce"
 
-#: includes/class-wc-webmoney.php:524
+#: includes/class-wc-webmoney.php:532
 msgid "Feedback to author"
 msgstr "Связь с автором"
 
-#: includes/class-wc-webmoney.php:536
+#: includes/class-wc-webmoney.php:544
 msgid "Paid supplement"
 msgstr "Платное дополнение"
 
-#: includes/class-wc-webmoney.php:541
+#: includes/class-wc-webmoney.php:549
 msgid "Even more opportunities to accept payments. Increase conversion."
 msgstr "Еще больше возможностей принимать платежи. Увеличьте конверсию."
 
@@ -532,7 +527,6 @@ msgid "Webmoney - payment gateway for WooCommerce"
 msgstr "Webmoney - платежный шлюз для WooCommerce"
 
 #. Plugin URI of the plugin/theme
-#| msgid "https://mofsy.ru/projects/woocommerce-webmoney-payment-gateway"
 msgid "https://mofsy.ru/projects/wc-webmoney"
 msgstr "https://mofsy.ru/projects/wc-webmoney"
 
@@ -547,6 +541,9 @@ msgstr "Мофси"
 #. Author URI of the plugin/theme
 msgid "https://mofsy.ru"
 msgstr "https://mofsy.ru"
+
+#~ msgid "The order has not been paid. WMID: %1$s and purse: %2$s and IP: %3$s"
+#~ msgstr "Счет не был оплачен. WMID: %1$s Кошелек: %2$s IP: %3$s"
 
 #~ msgid ""
 #~ "Setting receiving payments through Webmoney Merchant. If the gateway is "
@@ -608,9 +605,6 @@ msgstr "https://mofsy.ru"
 
 #~ msgid "Order successfully paid."
 #~ msgstr "Счет успешно оплачен."
-
-#~ msgid "The order has not been paid."
-#~ msgstr "Счет не был оплачен."
 
 #~ msgid "Wallets"
 #~ msgstr "Кошельки"

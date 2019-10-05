@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Webmoney - payment gateway for WooCommerce\n"
-"POT-Creation-Date: 2019-10-03 20:02+0300\n"
+"POT-Creation-Date: 2019-10-05 11:56+0300\n"
 "PO-Revision-Date: 2016-01-05 19:06+0300\n"
 "Last-Translator: Mofsy <ru.mofsy@yandex.ru>\n"
 "Language-Team: Mofsy <support@mofsy.ru>\n"
@@ -384,106 +384,105 @@ msgstr ""
 msgid "Cancel & return to cart"
 msgstr ""
 
-#: includes/class-wc-webmoney-method.php:1074
+#: includes/class-wc-webmoney-method.php:1080
 msgid "Action error."
 msgstr ""
 
-#: includes/class-wc-webmoney-method.php:1239
+#: includes/class-wc-webmoney-method.php:1250
 msgid "Order not found."
 msgstr ""
 
-#: includes/class-wc-webmoney-method.php:1255
+#: includes/class-wc-webmoney-method.php:1286
 #, php-format
 msgid "Webmoney PRE request success. WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr ""
 
-#: includes/class-wc-webmoney-method.php:1276
+#: includes/class-wc-webmoney-method.php:1312
 #, php-format
 msgid "Validate hash error. Local: %1$s Remote: %2$s"
 msgstr ""
 
-#: includes/class-wc-webmoney-method.php:1289
+#: includes/class-wc-webmoney-method.php:1330
 #, php-format
 msgid "Validate secret key error. Local: %1$s Remote: %2$s"
 msgstr ""
 
-#: includes/class-wc-webmoney-method.php:1314
+#: includes/class-wc-webmoney-method.php:1355
 #, php-format
 msgid ""
 "Order successfully paid (TEST MODE). WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr ""
 
-#: includes/class-wc-webmoney-method.php:1324
+#: includes/class-wc-webmoney-method.php:1365
 #, php-format
 msgid "Order successfully paid. WMID: %1$s and purse: %2$s and IP: %3$s"
 msgstr ""
 
-#: includes/class-wc-webmoney-method.php:1338
-#: includes/class-wc-webmoney-method.php:1345
+#: includes/class-wc-webmoney-method.php:1389
+#: includes/class-wc-webmoney-method.php:1401
 msgid "Payment error, please pay other time."
 msgstr ""
 
-#: includes/class-wc-webmoney-method.php:1355
+#: includes/class-wc-webmoney-method.php:1416
 msgid "Client return to success page."
 msgstr ""
 
-#: includes/class-wc-webmoney-method.php:1376
-#, php-format
-msgid "The order has not been paid. WMID: %1$s and purse: %2$s and IP: %3$s"
+#: includes/class-wc-webmoney-method.php:1442
+msgid "Client return to fail url. The order has not been paid."
 msgstr ""
 
-#: includes/class-wc-webmoney-method.php:1393
+#: includes/class-wc-webmoney-method.php:1459
 msgid "Api request error. Action not found."
 msgstr ""
 
-#: includes/class-wc-webmoney.php:365
+#: includes/class-wc-webmoney.php:373
 msgid "Buy Premium add-on"
 msgstr ""
 
-#: includes/class-wc-webmoney.php:380
+#: includes/class-wc-webmoney.php:388
 msgid "Settings"
 msgstr ""
 
-#: includes/class-wc-webmoney.php:410
+#: includes/class-wc-webmoney.php:418
 msgid ""
 "The plugin for accepting payments through Webmoney for WooCommerce has been "
 "updated to a version that requires additional configuration."
 msgstr ""
 
-#: includes/class-wc-webmoney.php:412
+#: includes/class-wc-webmoney.php:420
 msgid "here"
 msgstr ""
 
-#: includes/class-wc-webmoney.php:413
+#: includes/class-wc-webmoney.php:421
 #, php-format
 msgid "Press %s (to go to payment gateway settings)."
 msgstr ""
 
-#: includes/class-wc-webmoney.php:518
+#: includes/class-wc-webmoney.php:526
 msgid "Useful information"
 msgstr ""
 
-#: includes/class-wc-webmoney.php:521 includes/class-wc-webmoney.php:543
+#: includes/class-wc-webmoney.php:529 includes/class-wc-webmoney.php:551
 msgid "Official plugin page"
 msgstr ""
 
-#: includes/class-wc-webmoney.php:522
+#: includes/class-wc-webmoney.php:530
 msgid "Related news: webmoney"
 msgstr ""
 
-#: includes/class-wc-webmoney.php:523
+#: includes/class-wc-webmoney.php:531
 msgid "Plugins for WooCommerce"
 msgstr ""
 
-#: includes/class-wc-webmoney.php:524
+#: includes/class-wc-webmoney.php:532
 msgid "Feedback to author"
 msgstr ""
 
-#: includes/class-wc-webmoney.php:536
+#: includes/class-wc-webmoney.php:544
 msgid "Paid supplement"
 msgstr ""
 
-#: includes/class-wc-webmoney.php:541
+#: includes/class-wc-webmoney.php:549
 msgid "Even more opportunities to accept payments. Increase conversion."
 msgstr ""
 
