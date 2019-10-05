@@ -53,6 +53,12 @@ So please contribute your language to the plugin to make it even more useful. Fo
 
 == Changelog ==
 
+= 2.0.1.1 =
+* Fix logger
+* Fix language files
+* Fix result url
+* More fix
+
 = 2.0.0.1 =
 * Plugin rename
 * Global refactoring
