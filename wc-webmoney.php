@@ -3,7 +3,7 @@
     Plugin Name: Webmoney - payment gateway for WooCommerce
     Plugin URI: https://mofsy.ru/projects/wc-webmoney
     Description: Allows you to use Webmoney payment gateway with the WooCommerce plugin.
-    Version: 2.0.1.1
+    Version: 2.0.1.2
 	WC requires at least: 3.0
 	WC tested up to: 3.7
     Author: Mofsy
