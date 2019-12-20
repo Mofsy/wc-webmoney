@@ -1,6 +1,6 @@
 === Payment gateway - Webmoney for WooCommerce ===
 Contributors: Mofsy
-Tags: webmoney, payment gateway, woo commerce, woocommerce, ecommerce, gateway, woo webmoney, wmtransfer, merchant, woo, вебмани
+Tags: webmoney, woocommerce, wmtransfer, payment gateway, woo commerce, ecommerce, gateway, woo webmoney, merchant, woo, вебмани
 Requires at least: 3.0
 Tested up to: 5.3
 Requires PHP: 5.4
@@ -41,9 +41,6 @@ Email - support@mofsy.ru
 
 * English - default, always included
 * Russian - always included
-
-*Note:* All my plugins are localized/ translateable by default. This is very important for all users worldwide.
-So please contribute your language to the plugin to make it even more useful. For translating I recommend the awesome for validating the ["Poedit Editor"](http://www.poedit.net/).
 
 == Installation ==
 
