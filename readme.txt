@@ -1,4 +1,4 @@
-=== Webmoney - payment gateway for WooCommerce ===
+=== Payment gateway - Webmoney for WooCommerce ===
 Contributors: Mofsy
 Tags: webmoney, payment gateway, woo commerce, woocommerce, ecommerce, gateway, woo webmoney, wmtransfer, merchant, woo, вебмани
 Requires at least: 3.0
