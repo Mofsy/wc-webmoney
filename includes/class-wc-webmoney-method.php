@@ -80,12 +80,12 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 		/**
 		 * Admin title
 		 */
-		$this->method_title = __( 'Webmoney', 'wc-webmoney' );
+		$this->method_title = __('Webmoney', 'wc-webmoney');
 
 		/**
 		 * Admin method description
 		 */
-		$this->method_description = __( 'Pay via Webmoney.', 'wc-webmoney' );
+		$this->method_description = __('Pay via Webmoney.', 'wc-webmoney');
 
 		/**
 		 * Initialize filters
@@ -103,12 +103,14 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 		/**
 		 * Save admin options
 		 */
-		if(current_user_can( 'manage_options' ))
+		if(current_user_can('manage_options'))
 		{
-			add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this,
+			add_action('woocommerce_update_options_payment_gateways_' . $this->id, array(
+				$this,
 				'process_admin_options'
 			));
-			add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this,
+			add_action('woocommerce_update_options_payment_gateways_' . $this->id, array(
+				$this,
 				'last_settings_update_version'
 			));
 		}
@@ -121,7 +123,7 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 		/**
 		 * Payment listener/API hook
 		 */
-		add_action('woocommerce_api_wc_' . $this->id, array($this, 'input_payment_notifications' ));
+		add_action('woocommerce_api_wc_' . $this->id, array($this, 'input_payment_notifications'));
 	}
 
 	/**
@@ -134,11 +136,11 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 		 */
 		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_main'), 10);
 		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_interface'), 20);
-		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_purse_wmr' ), 30);
-		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_purse_wmp' ), 40);
-		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_purse_wme' ), 50);
-		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_purse_wmz' ), 60);
-		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_purse_wmu' ), 70);
+		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_purse_wmr'), 30);
+		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_purse_wmp'), 40);
+		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_purse_wme'), 50);
+		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_purse_wmz'), 60);
+		add_filter('wc_webmoney_init_form_fields', array($this, 'init_form_fields_purse_wmu'), 70);
 	}
 
 	/**
@@ -159,7 +161,7 @@ class Wc_Webmoney_Method extends WC_Payment_Gateway
 		/**
 		 * Receipt form show
 		 */
-		add_action('wc_webmoney_receipt_page_show', array($this, 'receipt_page_show_form' ), 10);
+		add_action('wc_webmoney_receipt_page_show', array($this, 'receipt_page_show_form'), 10);
 	}
 
 	/**
