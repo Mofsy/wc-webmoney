@@ -1,10 +1,10 @@
 <?php
-/*
-  +----------------------------------------------------------+
-  | Author: Mofsy <support@mofsy.ru>                         |
-  | Author website: https://mofsy.ru                         |
-  +----------------------------------------------------------+
-*/
+/**
+ * Main class
+ *
+ * @package Mofsy/WC_Webmoney
+ */
+defined('ABSPATH') || exit;
 
 final class WC_Webmoney
 {

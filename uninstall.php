@@ -1,15 +1,10 @@
 <?php
-/*
-  +----------------------------------------------------------+
-  | Author: Mofsy <support@mofsy.ru>                         |
-  | Author website: https://mofsy.ru                         |
-  +----------------------------------------------------------+
-*/
-
-if(!defined('WP_UNINSTALL_PLUGIN'))
-{
-	exit();
-}
+/**
+ * Uninstall
+ *
+ * @package Mofsy/WC_Webmoney
+ */
+defined('WP_UNINSTALL_PLUGIN') || exit;
 
 global $wpdb;
 

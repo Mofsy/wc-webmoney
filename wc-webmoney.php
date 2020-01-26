@@ -1,23 +1,22 @@
 <?php
 /**
-    Plugin Name: Payment gateway - Webmoney for WooCommerce
-    Plugin URI: https://mofsy.ru/projects/wc-webmoney
-    Description: Allows you to use Webmoney payment gateway with the WooCommerce plugin.
-    Version: 2.1.0
-	WC requires at least: 3.0
-	WC tested up to: 3.9
-    Author: Mofsy
-    Author URI: https://mofsy.ru
-    Text Domain: wc-webmoney
-    Domain Path: /languages
-    Copyright: Mofsy © 2015-2020
-	License: GNU General Public License v3.0
-	License URI: http://www.gnu.org/licenses/gpl-3.0.html
-*/
-if(!defined('ABSPATH'))
-{
-	exit;
-}
+ * Plugin Name: Payment gateway - Webmoney for WooCommerce
+ * Description: Allows you to use Webmoney payment gateway with the WooCommerce plugin.
+ * Plugin URI: https://mofsy.ru/projects/wc-webmoney
+ * Version: 2.1.0
+ * WC requires at least: 3.0
+ * WC tested up to: 3.9
+ * Text Domain: wc-webmoney
+ * Domain Path: /languages
+ * Author: Mofsy
+ * Author URI: https://mofsy.ru
+ * Copyright: Mofsy © 2015-2020
+ * License: GNU General Public License v3.0
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * @package Mofsy/WC_Webmoney
+ */
+defined('ABSPATH') || exit;
 
 /**
  * Run
