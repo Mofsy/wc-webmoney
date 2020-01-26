@@ -45,8 +45,10 @@ This is the best payment gateway plugin for Webmoney, because it is the most int
 
 == Changelog ==
 
-= 2.0.1.2 =
-* WP 5.3 support
+= 2.1.0 =
+* Test: WooCommerce 3.9
+* Test: WordPress 5.3
+* More fix
 
 = 2.0.1.1 =
 * Fix logger
