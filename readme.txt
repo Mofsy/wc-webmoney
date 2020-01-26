@@ -16,9 +16,6 @@ Created for individuals, individual entrepreneurs and legal entities.
 This is the best payment gateway plugin for Webmoney, because it is the most integrated with Webmoney Merchant capabilities and is available for most versions WooCommerce and Wordpress.
 [More description](https://mofsy.ru/projects/wc-webmoney)
 
-Questions and answers:
-Email - support@mofsy.ru
-
 = Support external plugins =
 1. WPML (http://wpml.org)
 2. WooCommerce Currency Switcher (https://currency-switcher.com)
