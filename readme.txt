@@ -2,7 +2,7 @@
 Contributors: Mofsy
 Tags: webmoney, woocommerce, wmtransfer, payment gateway, woo commerce, ecommerce, gateway, woo webmoney, merchant, woo, вебмани
 Requires at least: 3.0
-Tested up to: 5.3
+Tested up to: 5.7
 Requires PHP: 5.6
 Stable tag: trunk
 License: GNU General Public License v3.0
