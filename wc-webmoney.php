@@ -10,7 +10,7 @@
  * Domain Path: /languages
  * Author: Mofsy
  * Author URI: https://mofsy.ru
- * Copyright: Mofsy © 2015-2020
+ * Copyright: Mofsy © 2015-2021
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
