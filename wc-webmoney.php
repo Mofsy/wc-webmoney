@@ -5,7 +5,7 @@
  * Plugin URI: https://mofsy.ru/projects/wc-webmoney
  * Version: 2.1.0
  * WC requires at least: 3.2
- * WC tested up to: 3.9
+ * WC tested up to: 5.1
  * Text Domain: wc-webmoney
  * Domain Path: /languages
  * Author: Mofsy
